@@ -1,0 +1,42 @@
+<section data-ng-controller="UsuariosController" data-ng-init="find()">
+    <div class="col-md-12 background-image page-header"><br>
+        <div class="row">
+            <div class="col-md-4"><br>
+                <img src="modules/core/img/Logo1.png" width="300px" height="150px">
+            </div>
+            <div class="col-md-4 text-center"><br><br>
+                <h2>Administrar usuarios</h2>
+            </div><br>
+        </div>
+    </div> <br>
+
+    <label>Buscar
+            <input type="text" ng-model="Buscar">
+    </label> <br>
+<div class="col-md-12" >
+    <table class="table table-responsive text-center">
+        <tr>
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Rol</th>
+            <th>Tipo</th>
+            <th>Estatus</th>
+            <th>Modificar/Eliminar</th>
+        </tr>
+        <tr data-ng-repeat="usuario in usuarios | filter: Buscar" >
+        <td>{{usuario.displayName}}</td>
+        <td>{{usuario.username}}</td>
+        <td>{{usuario.roles[0]}}</td>
+        <td>{{usuario.tipo}}</td>
+        <td>{{usuario.estatus}}</td>
+        <td>
+        <div class="pull-right" >
+            <a class="btn btn-primary" href="/#!/usuarios/{{usuario._id}}/edit">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+        </div>
+        </td>
+        </tr>
+    </table>
+</div>
+</section>

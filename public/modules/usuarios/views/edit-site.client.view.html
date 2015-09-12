@@ -1,0 +1,70 @@
+<section data-ng-controller="UsuariosController" data-ng-init="findOne()">
+    <div class="col-md-12 background-image page-header"><br>
+        <div class="row">
+            <div class="col-md-4"><br>
+                <img src="modules/core/img/Logo1.png" width="300px" height="150px">
+            </div>
+            <div class="col-md-4 text-center"><br><br>
+                <h2>Editar sitio</h2>
+            </div><br>
+        </div>
+    </div>
+    <div class="col-xs-offset-4 col-xs-8 col-md-offset-4 col-md-4">
+        <form class="form-horizontal" data-ng-submit="updateSite()">
+            <fieldset>
+
+                    <label class="control-label" for="telefono">Teléfono:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="usuario.telefono" id="telefono" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="paginaweb">Página Web:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="usuario.paginaweb" id="paginaweb" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="facebook">Facebook:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="usuario.facebook" id="facebook" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="twitter">Twitter:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="usuario.twitter" id="twitter" class="form-control">
+                    </div><br>
+                    <h6>* NOTA: Despues de seleccionar el color cierre la paleta de colores para guardar cambios</h6>   
+                    <label class="control-label" for="colorFondo">Color Fondo:</label>
+                    <div class="controls">
+                        <input type="color" data-ng-model="usuario.colorFondo" id="colorFondo" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="colorContacto">Color Fondo Contacto:</label>
+                    <div class="controls">
+                        <input type="color" data-ng-model="usuario.colorContacto" id="colorContacto" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="colorLetra">Color Letra:</label>
+                    <div class="controls">
+                        <input type="color" data-ng-model="usuario.colorLetra" id="colorLetra" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="colorMarco">Color Marco:</label>
+                    <div class="controls">
+                        <input type="color" data-ng-model="usuario.colorMarco" id="colorMarco" class="form-control">
+                    </div>
+
+
+
+
+                <div class="text-center form-group">
+                    <button type="submit" class="btn btn-large btn-primary">Guardar Sitio</button>
+                </div>
+
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</section>

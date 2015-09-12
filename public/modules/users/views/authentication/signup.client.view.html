@@ -1,0 +1,61 @@
+<section class="row" data-ng-controller="AuthenticationController">
+<div class="col-md-12 background-image page-header"><br>
+	<div class="row">
+	    <div class="col-md-4"><br>
+	      <img src="modules/core/img/Logo1.png" width="300px" height="150px">
+	    </div>
+   </div>
+  </div>
+
+	
+		<div class="col-md-6">
+			<h3 class="col-md-12 text-center">Crea una cuenta</h3>
+			<div class="col-md-2"></div>
+			<form name="userForm" data-ng-submit="signup()" class="col-md-8 signin form-horizontal"  autocomplete="off">
+				<fieldset>
+					<div class=" form-group">
+						<label for="firstName">Nombre</label>
+						<input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="Nombre">
+					</div>
+					<div class="form-group">
+						<label for="lastName">Apellidos</label>
+						<input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Apellidos">
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<label for="username">Usuario</label> (con este usuario iniciaras sesión)
+						<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Usuario">
+					</div>
+					<div class="form-group">
+						<label for="password">Contraseña</label>
+						<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Contraseña">
+					</div>
+					<div class="text-center form-group">
+						<button type="submit" class="btn btn-large btn-primary">Registrate</button>&nbsp; or&nbsp;
+						<a href="/#!/signin" class="show-signup">Iniciar sesión</a>
+					</div>
+					<div data-ng-show="error" class="text-center text-danger">
+						<strong data-ng-bind="error"></strong>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+		
+		<div class="col-md-6 text-center">
+			<h3 class="col-md-12 text-center">O Registrate a través de tu red social</h3>
+			<a href="/auth/facebook" class="undecorated-link">
+				<img class="img-circle" src="/modules/users/img/buttons/facebook.png">
+			</a>
+			<a href="/auth/twitter" class="undecorated-link">
+				<img class="img-circle" src="/modules/users/img/buttons/twitter.png">
+			</a>
+			<a href="/auth/google" class="undecorated-link">
+				<img class="img-circle" src="/modules/users/img/buttons/google.png">
+			</a>
+		</div>
+
+</section>

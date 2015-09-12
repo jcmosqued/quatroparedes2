@@ -1,0 +1,13 @@
+---
+declared-services: 
+  mean-mongo: 
+    label: mongolab 
+    plan: sandbox 
+applications:
+- name: quatroparedes
+  host: quatroparedes
+  memory: 1024M
+  services:
+  - mean-mongo
+  env:
+    NODE_ENV: production

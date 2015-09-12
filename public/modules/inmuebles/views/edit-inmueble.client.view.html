@@ -1,0 +1,139 @@
+<section data-ng-controller="InmueblesController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Editar Inmueble</h1>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form class="form-horizontal" data-ng-submit="update()">
+            <fieldset>
+
+ 
+                    <label class="control-label" for="titulo">Título</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.titulo" id="titulo" class="form-control" placeholder="Agrega un título de máximo 30 caracteres" maxlength="30" required>
+                    </div>
+
+                    <label class="control-label" for="tipo_inmueble">Tipo de inmueble: <br>
+                        <select ng-model="inmueble.tipo_inmueble" id="tipo_inmueble" class="form-control" placeholder="Tipo de inmueble" required>
+                            <option value="Casa">Casa</option>
+                            <option value="Departamento">Departamento</option>
+                            <option value="Oficina">Oficina</option>
+                            <option value="Penthouse">Penthouse</option>
+                            <option value="Loft">Loft</option>
+                            <option value="Terreno">Terreno</option>
+                            <option value="Bodega">Bodega</option>
+                            <option value="Local">Local</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                    </label> <br>
+
+                    <label class="control-label" for="tipo_trans">Tipo de transacción: <br>
+                        <select ng-model="inmueble.tipo_trans" id="tipo_trans" class="form-control" required>
+                            <option value="Venta">Venta</option>
+                            <option value="Renta">Renta</option>
+                            <option value="Traspaso">Traspaso</option>
+                        </select>
+                    </label> <br>
+
+                    <label class="control-label" for="estado">Estado</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.estado" id="estado" class="form-control" placeholder="Estado">
+                    </div>
+
+
+                    <label class="control-label" for="ciudad">Ciudad</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.ciudad" id="ciudad" class="form-control" placeholder="Ciudad" >
+                    </div>
+
+                    <label class="control-label" for="zona">Zona: <br>
+                        <select ng-model="inmueble.zona" id="zona" class="form-control" required>
+                            <option value="Norte">Norte</option>
+                            <option value="Sur">Sur</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Este">Este</option>
+                            <option value="Oeste">Oeste</option>
+                        </select>
+                    </label> <br>
+
+                    <label class="control-label" for="colonia">Colonia</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.colonia" id="colonia" class="form-control" placeholder="Colonia" >
+                    </div>
+
+                    <label class="control-label" for="direccion">Dirección</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.direccion" id="direccion" class="form-control" placeholder="Dirección" required>
+                    </div>
+
+                    <label class="control-label" for="precio">Precio</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.precio" id="precio" class="form-control" placeholder="Precio">
+                    </div>
+
+                    <label class="control-label" for="m2terreno">m2 Terreno:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.m2terreno" id="m2terreno" class="form-control" placeholder="m2 de terreno">
+                    </div>
+
+                    <label class="control-label" for="m2construccion">m2 Construcción:</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.m2construccion" id="m2construccion" class="form-control" placeholder="m2 de construcción">
+                    </div>
+                    
+                    <label class="control-label" for="no_plantas">Número de plantas</label>
+                    <div class="controls">
+                        <input type="number" data-ng-model="inmueble.no_plantas" id="no_plantas" class="form-control" min = "1" max = "5">
+                    </div>
+
+                    <label class="control-label" for="no_habitaciones">Numero de habitaciones</label>
+                    <div class="controls">
+                        <input type="number" data-ng-model="inmueble.no_habitaciones" id="no_habitaciones" class="form-control" min = "1" max = "20">
+                    </div>
+
+                    <label class="control-label" for="no_banos">Número de baños</label>
+                    <div class="controls">
+                        <input type="number" data-ng-model="inmueble.no_banos" id="no_banos" class="form-control" min = "1" max = "10" step="0.5">
+                    </div>
+
+                    <label class="control-label" for="no_carros">Espacios de estacionamiento</label>
+                    <div class="controls">
+                        <input type="number" data-ng-model="inmueble.no_carros" id="no_carros" class="form-control" min = "1" max = "10">
+                    </div>
+
+                    <label class="control-label" for="image">Imagen principal</label>
+                    <div class="controls">
+                        <input id="file" type="file" data-ng-model="image" name="file" base-sixty-four-input accept="image/*">
+                        <input id="image" type="text" data-ng-model="file.base64"> 
+                    </div>
+
+                    <label class="control-label" for="image">Imagenes adicionales</label>
+                    <div class="controls">
+                         <input id="files" type="file" data-ng-model="imagenes" name="files" base-sixty-four-input accept="image/*" multiple>
+                         <div ng-repeat="file in files">
+                            <input type="text" data-ng-model="file.base64" name ="imagenes[]" class="form-control" > 
+                         </div>
+                    </div>
+
+                    <label class="control-label" for="nombreContacto">Nombre del contacto:</label>
+                    <input type="text" data-ng-model="inmueble.nombreContacto" id="nombreContacto" class="form-control" placeholder="Nombre del contacto">
+
+                    <label class="control-label" for="telContacto">Teléfono de contacto:</label>
+                    <input type="text" data-ng-model="inmueble.telContacto" id="telContacto" class="form-control" placeholder="Teléfono de contacto">
+
+                    <label class="control-label" for="mailContacto">Correo de contacto:</label>
+                    <input type="text" data-ng-model="inmueble.mailContacto" id="mailContacto" class="form-control" placeholder="Correo de contacto">
+
+
+                <div class="text-center form-group">
+                    <br><input type="submit" value="Guardar inmueble" class="btn btn-large btn-primary">
+                </div>
+
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</section>

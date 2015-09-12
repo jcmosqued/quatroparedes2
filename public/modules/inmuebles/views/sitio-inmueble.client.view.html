@@ -1,0 +1,151 @@
+<section data-ng-controller="InmueblesController" data-ng-init="findOne()"> <!--Sección 1, logotipo quatroparedes-->
+<div class="col-md-12 background-image page-header"><br>
+  <div class="row">
+    <div class="col-md-4"><br>
+      <img src="modules/core/img/Logo1.png" width="300px" height="150px">
+    </div>
+
+<!--Sección 2, portada de sitio-->
+
+    <div class="col-lg-12 modal-content text-right">
+        <img src="modules/inmuebles/Imagenes/patrocinadores/PortadaMDM.jpg" width="100%" height="300px">
+    </div>
+
+    <div class="col-lg-3 modal-content text-right capa1" style="background-color: {{inmueble.user.colorFondo}}">
+        <img class="img-redonda" src="modules/inmuebles/Imagenes/patrocinadores/mdm.jpg" width="100%" height="180px">
+    </div><br>
+    <br>
+    <div  class="col-lg-12  modal-content"  style="background-color: {{inmueble.user.colorFondo}}"><br><br><br><br></div>
+
+<!--Sección 3, Inmueble seleccionado-->
+
+    <div class="col-lg-12  modal-content"  style="background-color: {{inmueble.user.colorFondo}}">
+ 
+
+        <div class="col-lg-12 page-header text-center">
+                <font FACE="arial" SIZE=4>
+                 <h3 data-ng-bind="inmueble.titulo"></h3> 
+                 </font><br>
+
+            <div class="col-md-5 text-right">
+                <br>
+
+                <font FACE="arial" SIZE=3>
+                Tipo de inmueble: {{inmueble.tipo_inmueble}}<br/> 
+                Tipo de transacción: {{inmueble.tipo_trans}}<br/> 
+                Estado: {{inmueble.estado}} <br/> 
+                Ciudad: {{inmueble.ciudad}} 
+                Zona: {{inmueble.zona}} <br/>
+                Colonia: {{inmueble.colonia}} 
+                Dirección: {{inmueble.direccion}} <br/>
+                Precio: {{inmueble.precio | currency}} <br/>
+                M2 de terreno: {{inmueble.m2terreno}} <br/>
+                M2 de construcción: {{inmueble.m2construccion}} <br/>
+                No. Plantas: {{inmueble.no_plantas}} <br/>e
+                No. Habitaciones: {{inmueble.no_habitaciones}} 
+                No. Baños: {{inmueble.no_banos}} <br/>
+                No. Cajones: {{inmueble.no_carros}} <br/>
+                Contacto: {{inmueble.nombreContacto}} <br/>
+                Teléfono: {{inmueble.telContacto}} <br/>
+                Correo: {{inmueble.mailContacto}} <br/>
+                </font>
+            </div>
+
+            <div class="col-md-7 text-center">    
+              <img class="img-rounded" ng-src="data:image/jepg;base64,{{inmueble.image}}" id="photo-id" width="270" height="270"/><br>
+             
+              <small>
+                <em class="text-muted">
+                    Publicado en:
+                    <span data-ng-bind="inmueble.created | date:'mediumDate'"></span>
+                    por:
+                    <span data-ng-bind="inmueble.user.displayName"></span>
+                </em>   
+              </small>
+               
+            </div>
+
+            <div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == inmueble.user._id))">
+                <a class="btn btn-primary" href="/#!/inmuebles/{{inmueble._id}}/edit">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+                <a class="btn btn-primary" data-ng-click="remove();">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </div>
+        </div>
+
+<!--Sección 4, otras casas-->
+        <!-- Leyenda centrada-->
+        <div data-ng-controller="InmueblesController" data-ng-init="find()" class="text-center">
+            <!-- Inmuebles -->
+            <h2>Tambien te pueden interesar otras casas del mismo publicante</h2>
+            <h5>Pulsa en la imagen para ver más fotos</h5>
+        </div>
+         <!-- consulta a inmobiliaria sin centrar-->
+    <div data-ng-controller="InmueblesController" data-ng-init="find()">
+
+        <div class="col-md-10" data-ng-repeat="inmueble in inmuebles | filter :inmueble.user.displayName">
+
+            <table>
+                <tr>
+                    <th rowspan="2">
+                        <a ng-click="showModal(inmueble)"><img class="img-circle" ng-src="data:image/jpg;base64,{{inmueble.image}}" id="photo-id" width="160" height="160"/>
+                    </th>
+                    <th><br></th>
+                </tr>
+                <tr>
+                    <td style="background-color: {{inmueble.user.colorMarco}}">
+                        <h4 data-ng-bind="inmueble.titulo"> 
+                        </h4>
+                        <FONT FACE="arial" SIZE=2 COLOR="{{inmueble.user.colorLetra}}">
+                            <b>Tipo de inmueble:</b> {{inmueble.tipo_inmueble}},  
+                            <b>Precio:</b> {{inmueble.precio | currency}}, 
+                            <b>Tipo de transacción:</b> {{inmueble.tipo_trans}}, 
+                            <b>Estado:</b> {{inmueble.estado}}, 
+                            <b>Ciudad:</b> {{inmueble.ciudad}},
+                            <b>Zona:</b> {{inmueble.zona}},
+                            <b>Colonia:</b> {{inmueble.colonia}}, 
+                            <b>Dirección:</b> {{inmueble.direccion}},
+                            <b>M2 terreno:</b> {{inmueble.m2terreno}},
+                            <b>M2 construcción:</b> {{inmueble.m2construccion}},
+                            <b>No. Plantas:</b> {{inmueble.no_plantas}},
+                            <b>No. Habitaciones:</b> {{inmueble.no_habitaciones}}, 
+                            <b>No. Baños:</b> {{inmueble.no_banos}} ,
+                            <b>No. Cajones:</b> {{inmueble.no_carros}}
+                        </FONT> 
+                    </td> 
+                </tr>
+            </table>
+            <br>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <!--mensaje que se envía cuando no existen registros-->
+            <div class="alert alert-warning text-center" data-ng-hide="!inmuebles.$resolved || inmuebles.length">
+               No se encontro ningun registro quieres <a href="/#!/inmuebles/create">crear uno</a>?
+           </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-12 modal-content" style="background-color: {{inmueble.user.colorContacto}}">
+        <table width="100%">
+            <tr>
+              <td width="45%"><b>Contacto</b><br>Teléfono: {{inmueble.user.telefono}}<br>
+              Página Web: 
+              <a href="{{inmueble.user.paginaweb}}">{{inmueble.user.paginaweb}}</a>
+
+              </td>
+              <td width="50%"><b>Redes Sociales</b><br>Facebook: {{inmueble.user.facebook}}<br>
+              Twiter: {{inmueble.user.twitter}}</td>
+            </tr>
+        </table> 
+    </div>
+
+    <div class="col-lg-12" >
+          <br>
+    </div>
+
+</section>
