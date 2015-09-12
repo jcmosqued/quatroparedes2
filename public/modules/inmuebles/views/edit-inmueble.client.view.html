@@ -101,6 +101,11 @@
                         <input type="number" data-ng-model="inmueble.no_carros" id="no_carros" class="form-control" min = "1" max = "10">
                     </div>
 
+                    <label class="control-label" for="image">Imagen principal</label>
+                    <div class="controls">
+                        <input id="image" type="file" data-ng-model="image.base64" name="image" base-sixty-four-input accept="image/*">
+                    </div>
+
                     <label class="control-label" for="nombreContacto">Nombre del contacto:</label>
                     <input type="text" data-ng-model="inmueble.nombreContacto" id="nombreContacto" class="form-control" placeholder="Nombre del contacto">
 

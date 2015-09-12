@@ -53,6 +53,15 @@
                         <input type="color" data-ng-model="usuario.colorMarco" id="colorMarco" class="form-control">
                     </div>
 
+                    <label class="control-label" for="imgPortada">Imagen Portada</label>
+                    <div class="controls">
+                        <input id="imgPortada" type="file" data-ng-model="imgPortada.base64" name="imgPortada" base-sixty-four-input accept="image/*">
+                    </div>
+                    <label class="control-label" for="imgLogo">Imagen principal</label>
+                    <div class="controls">
+                        <input id="imgLogo" type="file" data-ng-model="imgLogo.base64" name="imgLogo" base-sixty-four-input accept="image/*">
+                    </div>
+
                 <div class="text-center form-group">
                     <button type="submit" class="btn btn-large btn-primary">Guardar Sitio</button>
                 </div>

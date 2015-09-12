@@ -28,8 +28,8 @@ var InmuebleSchema = new Schema({
 	nombreContacto:{ type: String, default: '' },
 	telContacto:{ type: String, default: '' },
 	mailContacto:{ type: String, default: '' },
-	image:{ type: String, default: '' },
-	imagenes:{type: Array},
+	image:{ type: Object },
+	imagenes:{type: Object},
 	tipoDestacado:{type: Number},
 	created: { type: Date, default: Date.now },
 	user: { type: Schema.ObjectId, ref: 'User'}

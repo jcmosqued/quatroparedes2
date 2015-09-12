@@ -139,11 +139,11 @@
                 <br>        
                     <div class="img-thumbnail text-center" >            
                         <FONT FACE="arial" SIZE=2 COLOR="gray">
-                            Publicado por:
+                            Publicado por:<br>
                             <span data-ng-bind="inmueble.user.displayName"></span>
                         
                         </FONT>
-                        <img ng-src="data:image/jpg;base64,{{inmueble.image}}" id="photo-id" width="100%" height="200"/>
+                        <img ng-src="data:image/jpg;base64,{{inmueble.image.base64.base64}}" id="photo-id" width="100%" height="200"/>
 
 
                         <FONT FACE="arial" SIZE=2 COLOR="white" >
@@ -167,10 +167,18 @@
                                <a data-ng-href="#!/inmuebles/{{inmueble._id}}/edit"><font color="#000">Editar</font>
                                </a>
                             </div>
-                           
+                        </div>
+
+                        <div class="coll-sm-12">
                             <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="inmueble.user.tipo==='pagosite'">
 
                                 <a data-ng-href="#!/inmuebles/{{inmueble._id}}"><font color="#000">Ver Sitio</font>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="inmueble.user.tipo==='pagosite'">
+
+                                <a data-ng-href="#!/inmuebles/{{inmueble._id}}"><font color="#000">Compartir</font>
                                 </a>
                             </div>
                         </div>

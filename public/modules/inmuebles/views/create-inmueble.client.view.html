@@ -87,16 +87,12 @@
 
                 <label class="control-label" for="image">Imagen principal</label>
                 <div class="controls">
-                    <input id="file" type="file" data-ng-model="file" name="file" base-sixty-four-input accept="image/*">
-                    <input id="image" type="text" data-ng-model="file.base64"> 
+                    <input id="image" type="file" data-ng-model="image.base64" name="image" base-sixty-four-input accept="image/*">
                 </div>
 
                 <label class="control-label" for="image">Imagenes adicionales</label>
                 <div class="controls">
-                     <input id="files" type="file" data-ng-model="files" name="files" base-sixty-four-input accept="image/*" multiple>
-                     <div ng-repeat="file in files">
-                        <input type="text" data-ng-model="file.base64" name ="imagenes[]" class="form-control" > 
-                     </div>
+                     <input id="imagenes" type="file" data-ng-model="imagenes.base64" name="imagenes" base-sixty-four-input accept="image/*" multiple>
                 </div>
 
                 <label class="control-label" for="nombreContacto">Nombre del contacto:</label>
