@@ -1,0 +1,187 @@
+<section data-ng-controller="HomeController">
+  <!-- Iniica sección de título y logo -->
+
+  <div class="col-md-12 background-image page-header"><br>
+  <!--Sección de botones-->
+  <div class="col-lg-12 col-md-12 col-sm-12 btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+            <a class="btn btn-default" href="/#!/politicas"><FONT FACE="arial" SIZE=2 COLOR="gray"> Políticas </FONT>
+            </a>
+        </div>
+
+    <div class="btn-group" role="group">
+            <a class="btn btn-default" href="/#!/politicas"><FONT FACE="arial" SIZE=2 COLOR="gray"> Comprar </FONT>
+            </a>
+        </div>
+
+        <div class="btn-group" role="group">
+            <a class="btn btn-default" href="/#!/politicas"><FONT FACE="arial" SIZE=2 COLOR="gray"> Servicios </FONT>
+            </a>
+        </div>
+
+        <div class="btn-group" role="group">
+            <a class="btn btn-default" href="/#!/politicas"><FONT FACE="arial" SIZE=2 COLOR="gray"> Formas de Pago </FONT>
+            </a>
+        </div>
+
+        <div class="btn-group" role="group">
+            <a class="btn btn-default" href="/#!/politicas"><FONT FACE="arial" SIZE=2 COLOR="gray">¿Cómo Compro?</FONT>
+            </a>
+        </div>
+
+  </div><br> <br>
+    <div class="row" height="150px">
+
+    <div class="col-md-4"><br>
+      <img src="modules/core/img/Logo1.png" width="300px" height="150px">
+    </div><br>
+
+     <div class="col-md-4" >
+        <iframe src="modules/core/Banner1.html" width="300" height="120" marginwidth="0" scrolling="yes" frameborder="0"></iframe>
+     </div> 
+
+    <div class="col-md-1 texttrans" ><br>
+      <a href="/#!/inmuebles" ng-click="setTransaccion('Venta')">   
+      Venta</font>
+
+      </a>
+     </div>
+    
+    <div class="col-md-1 texttrans"><br>
+      <a href="/#!/inmuebles" ng-click="setTransaccion('Renta')">   
+      Renta
+      </a>
+     </div>
+          
+      <div class="col-md-1 texttrans"><br>
+      <a href="/#!/inmuebles" ng-click="setTransaccion('Traspaso')">   
+      Traspaso
+      </a>
+     </div>
+
+   </div>
+  </div>
+
+
+<!-- Inicia sección de botones del Main-->
+<div class="mainbody-section text-center container">
+<!--div de men-->
+<div class="col-lg-2">
+
+  <div class="col-sm-12 menu-item blue img-rounded ">
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Casa')">   
+      <img src="modules/core/img/IconosPagina/casa1.png">
+      Casas
+    </a>
+  </div>
+
+  <div class="col-sm-12 menu-item blue img-rounded ">
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Departamento')">   
+      <img src="modules/core/img/IconosPagina/depa.png">
+      Departamentos
+    </a>
+  </div>
+
+  <div class="col-sm-12 menu-item blue img-rounded"> 
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Oficina')">   
+      <img src="modules/core/img/IconosPagina/Ioficina.png">
+      Oficinas
+    </a>
+  </div>
+
+  <div class="col-sm-12 menu-item blue img-rounded"> 
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Penthouse')">   
+      <img src="modules/core/img/IconosPagina/Penthouse.png">
+      Penthouse
+    </a>
+  </div>
+
+  <div class="col-sm-12 menu-item blue img-rounded"> 
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Loft')">   
+      <img src="modules/core/img/IconosPagina/Loft.png">
+      Loft
+    </a>
+  </div>
+
+  <div class="col-sm-12 menu-item blue img-rounded"> 
+   <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Terreno')">   
+    <img src="modules/core/img/IconosPagina/Terreno.png">
+    Terrenos</a>
+  </div>
+
+  <div class="col-sm-12 menu-item blue img-rounded"> 
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Bodega')">   
+      <img src="modules/core/img/IconosPagina/bodega.png">
+      Bodegas
+    </a>
+  </div>
+
+  <div class="col-sm-12 menu-item blue img-rounded">
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Local')">   
+      <img src="modules/core/img/IconosPagina/local.png">
+      Locales
+    </a>
+  </div>  
+
+  <div class="col-sm-12 menu-item blue img-rounded">
+    <a href="/#!/inmuebles" data-toggle="modal" ng-click="setCategoria('Otros')">   
+      <img src="modules/core/img/IconosPagina/Otros.png">
+      Otros
+    </a>
+  </div> 
+</div>                     
+
+<!-- Sección de carrusel -->  
+  <div class="col-lg-10 container">
+  <div id="carousel-ejemplo" class="carousel slide" data-ride="carousel">
+    <!-- Indicadores del carrusel -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-ejemplo" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-ejemplo" data-slide-to="1"></li>
+      <li data-target="#carousel-ejemplo" data-slide-to="2"></li>
+      <li data-target="#carousel-ejemplo" data-slide-to="3"></li>
+      <li data-target="#carousel-ejemplo" data-slide-to="4"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="modules/core/img/banners_2/01.png" alt="..." class="img-thumbnail">
+      </div>
+
+      <div class="item">
+        <img src="modules/core/img/banners_2/02.png" alt="..." class="img-thumbnail">
+      </div>
+
+      <div class="item">
+        <img src="modules/core/img/banners_2/03.png" alt="..." class="img-thumbnail">
+      </div>
+
+      <div class="item">
+        <img src="modules/core/img/banners_2/04.png" alt="..." class="img-thumbnail">
+      </div>
+
+      <div class="item">
+        <img src="modules/core/img/banners_2/05.png" alt="..." class="img-thumbnail">
+      </div>
+
+    </div>
+
+    <!--fin wrapper-->
+    <!-- Botones de navegación-->
+    <a class="left carousel-control" href="#carousel-ejemplo" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previo</span>
+    </a>
+
+    <a class="right carousel-control" href="#carousel-ejemplo" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+
+
+</div> <!--fin Carusel-->
+
+</section>

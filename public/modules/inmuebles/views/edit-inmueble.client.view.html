@@ -101,20 +101,6 @@
                         <input type="number" data-ng-model="inmueble.no_carros" id="no_carros" class="form-control" min = "1" max = "10">
                     </div>
 
-                    <label class="control-label" for="image">Imagen principal</label>
-                    <div class="controls">
-                        <input id="file" type="file" data-ng-model="image" name="file" base-sixty-four-input accept="image/*">
-                        <input id="image" type="text" data-ng-model="file.base64"> 
-                    </div>
-
-                    <label class="control-label" for="image">Imagenes adicionales</label>
-                    <div class="controls">
-                         <input id="files" type="file" data-ng-model="imagenes" name="files" base-sixty-four-input accept="image/*" multiple>
-                         <div ng-repeat="file in files">
-                            <input type="text" data-ng-model="file.base64" name ="imagenes[]" class="form-control" > 
-                         </div>
-                    </div>
-
                     <label class="control-label" for="nombreContacto">Nombre del contacto:</label>
                     <input type="text" data-ng-model="inmueble.nombreContacto" id="nombreContacto" class="form-control" placeholder="Nombre del contacto">
 

@@ -1,13 +1,13 @@
 'use strict';
 
 // Inmuebles controller
-angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootScope', '$modal', 'transacciones', 'categorias', 'item', '$timeout', '$stateParams', '$location', 'Authentication', 'Inmuebles',
-	function($scope, $rootScope, $modal, transacciones, categorias, item, $timeout, $stateParams, $location, Authentication, Inmuebles) {
+angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootScope', '$modal', 'categorias', 'transacciones', 'item', '$timeout',  'Upload', '$stateParams', '$location', 'Authentication', 'Inmuebles',
+	function($scope, $rootScope, $modal, categorias, transacciones, item, $timeout,  Upload, $stateParams, $location, Authentication, Inmuebles) {
 		$scope.authentication = Authentication;
 		$scope.categoriaActual=categorias.categoriaActual;
 		$scope.transaccionActual=transacciones.transaccionActual;
 
-            $scope.setCategoria =function(categoria){
+$scope.setCategoria =function(categoria){
 			$scope.categoriaActual=categoria;
 		}
 

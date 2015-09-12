@@ -1,15 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://quatro:paredes@ds041053.mongolab.com:41053/IbmCloud_986qv82c_k7hhp9bm',
-	app: {
-		title: 'quatroparedes',
-		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-		keywords: 'MongoDB, Express, AngularJS, Node.js'
-	},
-	templateEngine: 'swig',
-	sessionSecret: 'MEAN',
-	sessionCollection: 'sessions',
+	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://quatro:paredes@dogen.mongohq.com:10068/quatroparedes',
 	assets: {
 		lib: {
 			css: [
@@ -17,30 +9,19 @@ module.exports = {
 				'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
 			],
 			js: [
-				'public/lib/angular/angular.js',
+				'public/lib/angular/angular.min.js',
 				'public/lib/angular-resource/angular-resource.js', 
 				'public/lib/angular-cookies/angular-cookies.js', 
 				'public/lib/angular-animate/angular-animate.js', 
 				'public/lib/angular-touch/angular-touch.js', 
 				'public/lib/angular-sanitize/angular-sanitize.js', 
-				'public/lib/angular-ui-router/release/angular-ui-router.js',
-				'public/lib/angular-ui-utils/ui-utils.js',
-				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-				'public/lib/jquery/dist/jquery.min.js',
-				'public/lib/bootstrap/dist/js/bootstrap.min.js',
-	            'public/lib/angular-base64-upload/dist/angular-base64-upload.min.js'
+				'public/lib/angular-ui-router/release/angular-ui-router.min.js',
+				'public/lib/angular-ui-utils/ui-utils.min.js',
+				'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js'
 			]
 		},
-		css: [
-			'public/dist/application.min.css',
-			'public/modules/**/css/*.css'
-			],
-		js: [
-			'public/dist/application.min.js',
-			'public/config.js',
-			'public/application.js',
-			'public/modules/*/*.js'
-			]
+		css: 'public/dist/application.min.css',
+		js: 'public/dist/application.min.js'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
