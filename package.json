@@ -4,7 +4,7 @@
 	"version": "0.0.2",
 	"author": "REMOTEchnology",
 	"engines": {
-		"node": "0.12.7",
+		"node": "0.12.6",
 		"npm": "2.11.3"
 	},
 	"scripts": {
