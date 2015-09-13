@@ -13,6 +13,8 @@
 		"postinstall": "bower install --config.interactive=false"
 	},
 	"dependencies": {
+		"node": "0.12.3",
+		"npm": "2.9.1",
 		"express": "~4.10.1",
 		"express-session": "~1.9.1",
 		"body-parser": "~1.9.0",
