@@ -4,11 +4,11 @@
 	"version": "0.0.2",
 	"author": "REMOTEchnology",
 	"engines": {
-		"node": "0.12.6",
+		"node": "0.12.3",
 		"npm": "2.9.1"
 	},
 	"scripts": {
-		"start": "grunt",
+		"start": "node server.js",
 		"test": "grunt test",
 		"postinstall": "bower install --config.interactive=false"
 	},
