@@ -15,7 +15,7 @@ module.exports = function(app) {
 
 	app.route('/inmuebles/:inmuebleId')
 		.get(inmuebles.read)
-		.put(users.requiresLogin, inmuebles.hasAuthorization, inmuebles.update)
+		.put(users.requiresLogin,  inmuebles.update)
 		.delete(users.requiresLogin, inmuebles.hasAuthorization, inmuebles.delete);
 
 	// Finish by binding the Inmueble middleware

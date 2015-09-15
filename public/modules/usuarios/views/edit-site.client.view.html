@@ -33,22 +33,32 @@
                         <input type="text" data-ng-model="usuario.twitter" id="twitter" class="form-control">
                     </div><br>
                     <h6>* NOTA: Despues de seleccionar el color cierre la paleta de colores para guardar cambios</h6>   
-                    <label class="control-label" for="colorFondo">Color Fondo:</label>
+                    <label class="control-label" for="colorFondo">Color del Fondo:</label>
                     <div class="controls">
                         <input type="color" data-ng-model="usuario.colorFondo" id="colorFondo" class="form-control">
                     </div>
 
-                    <label class="control-label" for="colorContacto">Color Fondo Contacto:</label>
+                    <label class="control-label" for="letraFondo">Color Letra del Fondo:</label>
+                    <div class="controls">
+                        <input type="color" data-ng-model="usuario.letraFondo" id="letraFondo" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="colorContacto">Color Fondo de Contacto:</label>
                     <div class="controls">
                         <input type="color" data-ng-model="usuario.colorContacto" id="colorContacto" class="form-control">
                     </div>
 
-                    <label class="control-label" for="colorLetra">Color Letra:</label>
+                    <label class="control-label" for="letraContacto">Color Letra de Contacto:</label>
                     <div class="controls">
-                        <input type="color" data-ng-model="usuario.colorLetra" id="colorLetra" class="form-control">
+                        <input type="color" data-ng-model="usuario.letraContacto" id="letraContacto" class="form-control">
                     </div>
 
-                    <label class="control-label" for="colorMarco">Color Marco:</label>
+                    <label class="control-label" for="letraMarco">Color Letra del Marco:</label>
+                    <div class="controls">
+                        <input type="color" data-ng-model="usuario.letraMarco" id="letraMarco" class="form-control">
+                    </div>
+
+                    <label class="control-label" for="colorMarco">Color del Marco:</label>
                     <div class="controls">
                         <input type="color" data-ng-model="usuario.colorMarco" id="colorMarco" class="form-control">
                     </div>
@@ -57,7 +67,7 @@
                     <div class="controls">
                         <input id="imgPortada" type="file" data-ng-model="imgPortada.base64" name="imgPortada" base-sixty-four-input accept="image/*">
                     </div>
-                    <label class="control-label" for="imgLogo">Imagen principal</label>
+                    <label class="control-label" for="imgLogo">Imagen Logotipo</label>
                     <div class="controls">
                         <input id="imgLogo" type="file" data-ng-model="imgLogo.base64" name="imgLogo" base-sixty-four-input accept="image/*">
                     </div>

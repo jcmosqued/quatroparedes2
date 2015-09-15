@@ -1,0 +1,44 @@
+<section data-ng-controller="InmueblesController" data-ng-init="find()">
+    <div class="col-md-12 background-image page-header"><br>
+        <div class="row">
+            <div class="col-md-4"><br>
+                <img src="modules/core/img/Logo1.png" width="300px" height="150px">
+            </div>
+            <div class="col-md-4 text-center"><br><br>
+                <h2>Destacar inmuebles</h2>
+            </div><br>
+        </div>
+    </div> <br>
+
+    <label>Buscar
+            <input type="text" ng-model="Buscar">
+    </label> <br>
+<div class="col-md-12" >
+    <table class="table table-striped table-responsive text-center">
+        <tr>
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Correo</th>
+            <th>Título</th>
+            <th>Dirección</th>
+            <th>Nivel destacado</th>
+            <th>Modificar/Eliminar</th>
+        </tr>
+        <tr data-ng-repeat="inmueble in inmuebles | filter: Buscar | orderBy: 'user.displayName'" >
+        <td>{{inmueble.user.displayName}}</td>
+        <td>{{inmueble.user.username}}</td>
+        <td>{{inmueble.user.email}}</td>
+        <td>{{inmueble.titulo}}</td>
+        <td>{{inmueble.direccion}}</td>
+        <td>{{inmueble.tipoDestacado}}</td>
+        <td>
+        <div class="pull-right" >
+            <a class="btn btn-primary" href="/#!/inmuebles/{{inmueble._id}}/editDestacado">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+        </div>
+        </td>
+        </tr>
+    </table>
+</div>
+</section>

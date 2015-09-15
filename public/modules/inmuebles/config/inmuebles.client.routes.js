@@ -13,6 +13,10 @@ angular.module('inmuebles').config(['$stateProvider',
 			url: '/inmueblesMe',
 			templateUrl: 'modules/inmuebles/views/list-inmueblesMe.client.view.html'
 		}).
+		state('listDestacados', {
+			url: '/inmueblesDestacados',
+			templateUrl: 'modules/inmuebles/views/list-Destacados.client.view.html'
+		}).
 		state('createInmueble', {
 			url: '/inmuebles/create',
 			templateUrl: 'modules/inmuebles/views/create-inmueble.client.view.html'
@@ -20,6 +24,10 @@ angular.module('inmuebles').config(['$stateProvider',
 		state('viewInmueble', {
 			url: '/inmuebles/:inmuebleId',
 			templateUrl: 'modules/inmuebles/views/sitio-inmueble.client.view.html'
+		}).
+		state('editDestacado', {
+			url: '/inmuebles/:inmuebleId/editDestacado',
+			templateUrl: 'modules/inmuebles/views/edit-destacado.client.view.html'
 		}).
 		state('editInmueble', {
 			url: '/inmuebles/:inmuebleId/edit',

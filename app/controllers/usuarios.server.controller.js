@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
  * List of Usuarios
  */
 exports.list = function(req, res) { 
-	Usuario.find().sort('-created').select('displayName username roles tipo logo telefono paginaweb facebook twitter colorEncabezadoPie colorFondo colorLetra colorMarco anunciosP anunciosD estatus').exec(function(err, usuarios) {
+	Usuario.find().sort('-created').select('displayName username email roles tipo logo telefono paginaweb facebook twitter colorEncabezadoPie colorFondo colorLetra colorMarco anunciosP anunciosD estatus').exec(function(err, usuarios) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -88,7 +88,7 @@ exports.list = function(req, res) {
  * Usuario middleware
  */
 exports.usuarioByID = function(req, res, next, id) { 
-	Usuario.findById(id).select('displayName username roles tipo logo telefono paginaweb facebook twitter colorEncabezadoPie colorFondo colorLetra colorMarco anunciosP anunciosD estatus').exec(function(err, usuario) {
+	Usuario.findById(id).select('displayName username email roles tipo logo telefono paginaweb facebook twitter colorEncabezadoPie colorFondo colorLetra colorMarco anunciosP anunciosD estatus').exec(function(err, usuario) {
 		if (err) return next(err);
 		if (! usuario) return next(new Error('Failed to load Usuario ' + id));
 		req.usuario = usuario ;

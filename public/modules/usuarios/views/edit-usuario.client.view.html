@@ -15,12 +15,12 @@
 
                     <label class="control-label" for="displayName">Nombre</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="usuario.displayName" id="displayName" class="form-control" required>
+                        <input type="text" data-ng-model="usuario.displayName" id="displayName" class="form-control"  disabled required>
                     </div>
 
                     <label class="control-label" for="username">Usuario</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="usuario.username" id="username" class="form-control" required>
+                        <input type="text" data-ng-model="usuario.username" id="username" class="form-control" disabled required>
                     </div>
 
                     <label class="control-label" for="roles">Rol: </label>
@@ -32,7 +32,6 @@
                     <label class="control-label" for="tipo">Tipo: </label>
                     <select ng-model="usuario.tipo" id="tipo" class="form-control" required>
                         <option value="gratuito">gratuito</option>
-                        <option value="pagodestacado">pago destacado</option>
                         <option value="pagosite">pago site</option>
                     </select>
 

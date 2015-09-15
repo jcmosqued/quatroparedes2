@@ -30,7 +30,7 @@ var InmuebleSchema = new Schema({
 	mailContacto:{ type: String, default: '' },
 	image:{ type: Object },
 	imagenes:{type: Object},
-	tipoDestacado:{type: Number},
+	tipoDestacado:{type: Number, default: 0},
 	created: { type: Date, default: Date.now },
 	user: { type: Schema.ObjectId, ref: 'User'}
 });

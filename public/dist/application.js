@@ -7926,39 +7926,11 @@ para poder acceder a sus datos*/
 				no_banos: this.no_banos,
 				no_carros: this.no_carros,
 //se obtiene el String base64 de la imagen principal a través del DOM
-                        image: document.getElementById('image').value,
+                        image: this.image,
+                        imagenes: this.imagenes,
 			});
-/*se obtienen los String base64 de las imagenes a través del DOM*/
-			var formulario = document.forms.create;
-			var imgs = formulario.elements['imagenes[]'];
-			inmueble.imagenes=[];
-                  var numImg=0;
-                  if ($scope.authentication.user.tipo=='gratuito'){
-                        if (imgs.length>4){
-                              numImg=4;
-                        } else{
-                              numImg=imgs.length;
-                        }
-                  } else{
-                        if (imgs.length>9){
-                              numImg=9;
-                        } else{
-                              numImg=imgs.length;
-                        }
-                  }
-/*se agregan los String al model para guardarse*/
-			if (imgs!=null)
-			{
 
-                        for (var i = 0; i < numImg; i++){
-                              inmueble.imagenes.push(imgs[i].value);
-                        }
-				for (var i = 0; i < numImg; i++){
-					inmueble.imagenes.push(imgs[i].value);
-				}
-			}
-
-			// Redirect after save
+      		// Redirect after save
 			inmueble.$save(function(response) {
 				$location.path('inmuebles');
 
@@ -8026,6 +7998,44 @@ para poder acceder a sus datos*/
 			$scope.inmueble= inmueble.inmuebleActual;
 
 		};
+
+
+            $scope.load = function(lugar) {
+                        console.log(lugar);
+
+            if (GBrowserIsCompatible()) {
+                  var map = new GMap2(document.getElementById("map"));
+                  map.setCenter(new GLatLng(0,0), 0);
+                  map.addControl(new GSmallMapControl());
+                  map.addControl(new GScaleControl());
+                  map.addControl(new GMapTypeControl());
+                  GEvent.addListener(map, "click", function(overlay, point){ 
+                        if(overlay){ 
+                              if(overlay.title)
+                                    map.openInfoWindowHtml(overlay.getPoint(), overlay.title);
+                        }
+                  });
+                  var geocoder = new GClientGeocoder();
+                  geocoder.getLatLng(lugar, function(point) {
+                        if (!point) {
+                              alert("Lugar no encontrado");
+                        } else {
+                              map.setCenter(point, 12);    // 12 indica el valor de zoom
+                              var center = new GMarker(map.getCenter());
+                              center.title = lugar;
+                              map.addOverlay(center);
+                              map.openInfoWindowHtml(center.getPoint(), center.title);
+                        }
+                  });
+                  var center = new GMarker(map.getCenter());
+            center.title = "Centro del mapa";
+                  map.addOverlay(center);
+                  map.openInfoWindowHtml(center.getPoint(), center.title);
+            }
+      };
+
+
+
 	}
 ]);
 

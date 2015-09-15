@@ -1,0 +1,50 @@
+<section data-ng-controller="InmueblesController" data-ng-init="findOne()">
+    <div class="col-md-12 background-image page-header"><br>
+        <div class="row">
+            <div class="col-md-4"><br>
+                <img src="modules/core/img/Logo1.png" width="300px" height="150px">
+            </div>
+            <div class="col-md-4 text-center"><br><br>
+                <h2>Editar destacados</h2>
+            </div><br>
+        </div>
+    </div> <br>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form class="form-horizontal" data-ng-submit="updateDestacado()">
+            <fieldset>
+
+ 
+                    <label class="control-label" for="titulo">Título</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.titulo" id="titulo" class="form-control" placeholder="Agrega un título de máximo 30 caracteres" maxlength="30" disabled required>
+                    </div>
+
+<!--                     <label class="control-label" for="tipoDestacado">Tipo destacado</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="inmueble.tipoDestacado" id="tipoDestacado" class="form-control" required>
+                    </div> -->
+
+
+                     <label class="control-label" for="tipoDestacado">Tipo Destacado: <br>
+                        <select ng-model="inmueble.tipoDestacado" id="tipoDestacado" class="form-control" required>
+                            <option value="0">No destacado</option>
+                            <option value="1">Junior</option>
+                            <option value="2">Senior</option>
+                            <option value="3">Master</option>
+                        </select>
+                    </label> <br>
+
+
+                <div class="text-center form-group">
+                    <br><input type="submit" value="Guardar inmueble" class="btn btn-large btn-primary">
+                </div>
+
+                <div data-ng-show="error" class="text-danger">
+                    <strong data-ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</section>

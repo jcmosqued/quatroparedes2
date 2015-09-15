@@ -23,14 +23,14 @@
  
 
         <div class="col-lg-12 page-header text-center">
-                <font FACE="arial" SIZE=4>
+                <font FACE="arial" SIZE=4 COLOR="{{inmueble.user.letraFondo}}">
                  <h3 data-ng-bind="inmueble.titulo"></h3> 
                  </font><br>
 
             <div class="col-md-5 text-right">
                 <br>
 
-                <font FACE="arial" SIZE=3>
+                <font FACE="arial" SIZE=3  COLOR="{{inmueble.user.letraFondo}}">
                 Tipo de inmueble: {{inmueble.tipo_inmueble}}<br/> 
                 Tipo de transacción: {{inmueble.tipo_trans}}<br/> 
                 Estado: {{inmueble.estado}} <br/> 
@@ -98,7 +98,7 @@
                     <td style="background-color: {{inmueble.user.colorMarco}}">
                         <h4 data-ng-bind="inmueble.titulo"> 
                         </h4>
-                        <FONT FACE="arial" SIZE=2 COLOR="{{inmueble.user.colorLetra}}">
+                        <FONT FACE="arial" SIZE=2 COLOR="{{inmueble.user.letraMarco}}">
                             <b>Tipo de inmueble:</b> {{inmueble.tipo_inmueble}},  
                             <b>Precio:</b> {{inmueble.precio | currency}}, 
                             <b>Tipo de transacción:</b> {{inmueble.tipo_trans}}, 

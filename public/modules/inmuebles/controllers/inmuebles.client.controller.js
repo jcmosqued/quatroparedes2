@@ -7,7 +7,7 @@ angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootS
 		$scope.categoriaActual=categorias.categoriaActual;
 		$scope.transaccionActual=transacciones.transaccionActual;
 
-$scope.setCategoria =function(categoria){
+            $scope.setCategoria =function(categoria){
 			$scope.categoriaActual=categoria;
 		}
 
@@ -313,6 +313,17 @@ para poder acceder a sus datos*/
 			});
 		};
 
+            // Update existing Inmueble
+            $scope.updateDestacado = function() {
+                  var inmueble = $scope.inmueble;
+
+                  inmueble.$update(function() {
+                        $location.path('inmueblesDestacados');
+                  }, function(errorResponse) {
+                        $scope.error = errorResponse.data.message;
+                  });
+            };
+
 		// Find a list of Inmuebles
 		$scope.find = function() {
 			$scope.inmuebles = Inmuebles.query();
@@ -323,7 +334,7 @@ para poder acceder a sus datos*/
 			$scope.inmueble = Inmuebles.get({ 
 				inmuebleId: $stateParams.inmuebleId
 			});
-			$scope.inmueble= inmueble.inmuebleActual;
+			//$scope.inmueble= inmueble.inmuebleActual;
 
 		};
 

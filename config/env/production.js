@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://quatro:paredes@dogen.mongohq.com:10068/quatroparedes',
+	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/quatroparedes-dev',
 	assets: {
 		lib: {
 			css: [

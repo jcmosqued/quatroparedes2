@@ -163,9 +163,11 @@
 			    </FONT>
 		    </div> 
 		</div>
-        <div>
+        <div >
 			<input type="button" value="Ver mapa" ng-click="load('{{item.direccion}}, Colonia: {{item.colonia}}, {{item.ciudad}}, {{item.estado}}');" />
-			<div id="map" style="width: 600px; height: 400px"></div>
+			<div id="map" style="width: 600px; height: 400px" data-ng-show="item.user.tipo==='pagosite'">
+				
+			</div>
 		</div>
 	</div>
 

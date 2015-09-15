@@ -131,9 +131,9 @@
     <!-- Inmuebles -->
     <h4>Mostrando {{(inmuebles | filter:{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, precio:Precio, estado: Estado, ciudad: Ciudad, zona: Zona, no_plantas: noPlantas}).length}} de {{inmuebles.length}} registros con tus criterios de búsqueda</h4>
     <div class="col-md-9">
-        <div class="col-md-4" data-ng-repeat="inmueble in inmuebles | filter :{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, no_plantas: noPlantas, estado: Estado, ciudad: Ciudad, zona: Zona, precio:Precio, no_plantas: noPlantas}" >
+        <div class="col-md-4" data-ng-repeat="inmueble in inmuebles | filter :{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, no_plantas: noPlantas, estado: Estado, ciudad: Ciudad, zona: Zona, precio:Precio, no_plantas: noPlantas} | orderBy:['-tipoDestacado', '-user.tipo']">
 
-        <table>
+        <table data-ng-show="inmueble.user.estatus==='activo'">
             <tr>
                 <td>
                 <br>        

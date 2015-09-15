@@ -17,7 +17,7 @@
 					<span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu">
-					<li>
+					<li data-ng-hide="authentication.user.roles[0]==='admin'">
 						<a href="/#!/settings/profile">Editar perfil</a>
 					</li>
 					<li data-ng-show="authentication.user.provider === 'local'">
@@ -27,6 +27,9 @@
 					<!-- Se anexa el menu para administrar usuarios -->
 					<li data-ng-show="authentication.user.roles[0]==='admin'">
 						<a href="/#!/usuarios"> Administrar usuarios</a>
+					</li>
+					<li data-ng-show="authentication.user.roles[0]==='admin'">
+						<a href="/#!/inmueblesDestacados"> Administrar destacados</a>
 					</li>
 					
 					<li data-ng-show="authentication.user.tipo==='pagosite'">
