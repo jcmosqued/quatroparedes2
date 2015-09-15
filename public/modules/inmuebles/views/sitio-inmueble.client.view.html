@@ -94,11 +94,11 @@
                     </th>
                     <th><br></th>
                 </tr>
-                <tr>
-                    <td style="background-color: {{inmueble.user.colorMarco}}">
+                <tr style="background-color: {{inmueble.user.colorMarco}}">
+                    <td >
+                        <FONT FACE="arial" SIZE=2 COLOR="{{inmueble.user.letraMarco}}">
                         <h4 data-ng-bind="inmueble.titulo"> 
                         </h4>
-                        <FONT FACE="arial" SIZE=2 COLOR="{{inmueble.user.letraMarco}}">
                             <b>Tipo de inmueble:</b> {{inmueble.tipo_inmueble}},  
                             <b>Precio:</b> {{inmueble.precio | currency}}, 
                             <b>Tipo de transacción:</b> {{inmueble.tipo_trans}}, 
