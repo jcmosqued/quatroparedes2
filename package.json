@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"author": "REMOTEchnology",
 	"engines": {
-		"node": "0.12.3",
+		"node": "0.8.x",
 		"iisnode": "0.1.21"
 	},
 	"scripts": {
