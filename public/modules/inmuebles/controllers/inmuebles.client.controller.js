@@ -305,7 +305,7 @@ para poder acceder a sus datos*/
 		// Update existing Inmueble
 		$scope.update = function() {
 			var inmueble = $scope.inmueble;
-
+                  console.log(inmueble);
 			inmueble.$update(function() {
 				$location.path('inmueblesMe');
 			}, function(errorResponse) {
