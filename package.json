@@ -1,11 +1,11 @@
 {
 	"name": "quatroparedes",
 	"description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
-	"version": "0.0.2",
+	"version": "0.0.1",
 	"author": "REMOTEchnology",
 	"engines": {
 		"node": "0.12.3",
-		"npm": "2.9.1"
+		"iisnode": "0.1.21"
 	},
 	"scripts": {
 		"start": "node server.js",

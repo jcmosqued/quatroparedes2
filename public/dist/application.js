@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
 	var applicationModuleName = 'quatroparedes';
-	var applicationModuleVendorDependencies = ['ngResource', 'ngCookies',  'ngAnimate',  'ngTouch',  'ngSanitize',  'ui.router', 'ui.bootstrap', 'ui.utils', 'ngFileUpload','naif.base64'];
+	var applicationModuleVendorDependencies = ['ngResource', 'ngCookies',  'ngAnimate',  'ngTouch',  'ngSanitize',  'ui.router', 'ui.bootstrap', 'ui.utils','naif.base64'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {
@@ -7656,6 +7656,10 @@ angular.module('inmuebles').config(['$stateProvider',
 			url: '/inmueblesMe',
 			templateUrl: 'modules/inmuebles/views/list-inmueblesMe.client.view.html'
 		}).
+		state('listDestacados', {
+			url: '/inmueblesDestacados',
+			templateUrl: 'modules/inmuebles/views/list-Destacados.client.view.html'
+		}).
 		state('createInmueble', {
 			url: '/inmuebles/create',
 			templateUrl: 'modules/inmuebles/views/create-inmueble.client.view.html'
@@ -7663,6 +7667,10 @@ angular.module('inmuebles').config(['$stateProvider',
 		state('viewInmueble', {
 			url: '/inmuebles/:inmuebleId',
 			templateUrl: 'modules/inmuebles/views/sitio-inmueble.client.view.html'
+		}).
+		state('editDestacado', {
+			url: '/inmuebles/:inmuebleId/editDestacado',
+			templateUrl: 'modules/inmuebles/views/edit-destacado.client.view.html'
 		}).
 		state('editInmueble', {
 			url: '/inmuebles/:inmuebleId/edit',
@@ -7673,13 +7681,13 @@ angular.module('inmuebles').config(['$stateProvider',
 'use strict';
 
 // Inmuebles controller
-angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootScope', '$modal', 'categorias', 'transacciones', 'item', '$timeout',  'Upload', '$stateParams', '$location', 'Authentication', 'Inmuebles',
-	function($scope, $rootScope, $modal, categorias, transacciones, item, $timeout,  Upload, $stateParams, $location, Authentication, Inmuebles) {
+angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootScope', '$modal', 'categorias', 'transacciones', 'item', '$timeout', '$stateParams', '$location', 'Authentication', 'Inmuebles',
+	function($scope, $rootScope, $modal, categorias, transacciones, item, $timeout, $stateParams, $location, Authentication, Inmuebles) {
 		$scope.authentication = Authentication;
 		$scope.categoriaActual=categorias.categoriaActual;
 		$scope.transaccionActual=transacciones.transaccionActual;
 
-$scope.setCategoria =function(categoria){
+            $scope.setCategoria =function(categoria){
 			$scope.categoriaActual=categoria;
 		}
 
@@ -7977,13 +7985,24 @@ para poder acceder a sus datos*/
 		// Update existing Inmueble
 		$scope.update = function() {
 			var inmueble = $scope.inmueble;
-
+                  console.log(inmueble);
 			inmueble.$update(function() {
 				$location.path('inmueblesMe');
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
 		};
+
+            // Update existing Inmueble
+            $scope.updateDestacado = function() {
+                  var inmueble = $scope.inmueble;
+
+                  inmueble.$update(function() {
+                        $location.path('inmueblesDestacados');
+                  }, function(errorResponse) {
+                        $scope.error = errorResponse.data.message;
+                  });
+            };
 
 		// Find a list of Inmuebles
 		$scope.find = function() {
@@ -7995,7 +8014,7 @@ para poder acceder a sus datos*/
 			$scope.inmueble = Inmuebles.get({ 
 				inmuebleId: $stateParams.inmuebleId
 			});
-			$scope.inmueble= inmueble.inmuebleActual;
+			//$scope.inmueble= inmueble.inmuebleActual;
 
 		};
 
