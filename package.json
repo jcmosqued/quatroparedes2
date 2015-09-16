@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"author": "REMOTEchnology",
 	"engines": {
-		"node": "0.8.x",
+		"node": "0.12.3",
 		"iisnode": "0.1.21"
 	},
 	"scripts": {
@@ -37,7 +37,7 @@
 		"forever": "~0.11.0",
 		"bower": "~1.3.8",
 		"grunt-cli": "~0.1.13",
-		"glob": "~5.0.14",
+		"glob": "~4.0.5",
 		"async": "~0.9.0",
 		"nodemailer": "~1.3.0",
 		"chalk": "~0.5"
