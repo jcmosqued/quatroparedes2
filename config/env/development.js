@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/quatroparedes-dev',
+	db: 'mongodb://quatroparedes:Quatroparedes123@104.44.133.255:27017/quatroparedes-dev',
 	app: {
 		title: 'quatroparedes - Development Environment'
 	},
