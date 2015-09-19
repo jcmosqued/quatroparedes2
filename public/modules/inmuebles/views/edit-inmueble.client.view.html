@@ -108,7 +108,12 @@
 
                     <label class="control-label" for="image">Imagen principal</label>
                     <div class="controls">
-                        <input id="image" type="file" data-ng-model="image" name="image" base-sixty-four-input accept="image/*">
+                        <input id="image" type="file" data-ng-model="inmueble.image" name="image" base-sixty-four-input accept="image/*" maxsize="100">
+                    </div>
+
+                    <label class="control-label" for="imagenes">Imagenes adicionales</label>
+                    <div class="controls">
+                         <input id="imagenes" type="file" data-ng-model="inmueble.imagenes" name="imagenes" base-sixty-four-input accept="image/*" multiple maxsize="5000">
                     </div>
 
                     <label class="control-label" for="nombreContacto">Nombre del contacto:</label>

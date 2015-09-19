@@ -65,11 +65,12 @@
 
                     <label class="control-label" for="imgPortada">Imagen Portada</label>
                     <div class="controls">
-                        <input id="imgPortada" type="file" data-ng-model="imgPortada.base64" name="imgPortada" base-sixty-four-input accept="image/*">
+                        <input id="imgPortada" type="file" data-ng-model="usuario.imgPortada" name="imgPortada" base-sixty-four-input accept="image/*" maxsize="500">
                     </div>
+
                     <label class="control-label" for="imgLogo">Imagen Logotipo</label>
                     <div class="controls">
-                        <input id="imgLogo" type="file" data-ng-model="imgLogo.base64" name="imgLogo" base-sixty-four-input accept="image/*">
+                        <input id="imgLogo" type="file" data-ng-model="usuario.imgLogo" name="imgLogo" base-sixty-four-input accept="image/*" maxsize="300">
                     </div>
 
                 <div class="text-center form-group">

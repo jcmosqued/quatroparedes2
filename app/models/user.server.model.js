@@ -48,14 +48,14 @@ var UserSchema = new Schema({
 	paginaweb:{type:String},
 	facebook:{type:String},
 	twitter:{type:String},
-	letraFondo:{type:String, default: '#fff'},
+	letraFondo:{type:String, default: '#000'},
 	colorFondo:{type:String, default: '#fff'},
-	letraContacto:{type:String, default: '#999'},
+	letraContacto:{type:String, default: '#000'},
 	colorContacto:{type:String, default: '#999'},
 	letraMarco:{type:String, default: '#000'},
 	colorMarco:{type:String, default: '#DCDCDC'},
-	imgPortada:{ type: String, default: '' },
-	imgLogo:{ type: String, default: '' },
+	imgPortada:{ type: Object},
+	imgLogo:{ type: Object},
 	estatus: {type:String, default: 'activo'},
 });
 
