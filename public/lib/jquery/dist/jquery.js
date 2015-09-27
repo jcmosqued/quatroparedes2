@@ -1,3 +1,5 @@
+
+
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -6832,7 +6834,7 @@ jQuery.each([ "toggle", "show", "hide" ], function( i, name ) {
 
 // Generate shortcuts for custom animations
 jQuery.each({
-	slideDown: genFx("show"),
+	carouselDown: genFx("show"),
 	slideUp: genFx("hide"),
 	slideToggle: genFx("toggle"),
 	fadeIn: { opacity: "show" },

@@ -67,6 +67,7 @@
         
         <label>Tipo de inmueble: <br>
             <select ng-model="categoriaActual" class="form-control">
+                <option value=""></option>
                 <option value="Casa">Casa</option>
                 <option value="Departamento">Departamento</option>
                 <option value="Oficina">Oficina</option>
@@ -81,17 +82,25 @@
 
         <label>Tipo de transacción:<br>
             <select ng-model="transaccionActual" class="form-control">
+                <option value=""></option>
                 <option value="Venta">Venta</option>
                 <option value="Renta">Renta</option>
                 <option value="Traspaso">Traspaso</option>
             </select>
-        </label>
-        <label>Estado: <br>
-            <input ng-model="Estado">
-        </label>
-        <label>Ciudad: <br>
-            <input ng-model="Ciudad">
+        </label><br>
+        
+        <label class="control-label" for="estado">* Estado:<br>
+        <select data-ng-model="estado" ng-options="state as state.valor for state in estados" id="estado" class="form-control">
+        </select>
         </label> <br>
+
+
+        <label class="control-label" for="ciudad">* Ciudad:<br>
+        <select data-ng-model="ciudad" ng-options="city as city.nombre for city in estado.ciudades" id="ciudad" class="form-control">
+        </select>
+        </label><br>
+
+
         <label>Zona: <br>
             <select ng-model="Zona" class="form-control">
                 <option value="Norte">Norte</option>
@@ -129,14 +138,14 @@
     </div>
 
     <!-- Inmuebles -->
-    <h4>Mostrando {{(inmuebles | filter:{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, precio:Precio, estado: Estado, ciudad: Ciudad, zona: Zona, no_plantas: noPlantas}).length}} de {{inmuebles.length}} registros con tus criterios de búsqueda</h4>
+    <h4>Mostrando {{(inmuebles | filter:{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, precio:Precio, estado: estado.valor, ciudad: ciudad.nombre, zona: Zona, no_plantas: noPlantas}).length}} de {{inmuebles.length}} registros con tus criterios de búsqueda</h4>
     <div class="col-md-9">
-        <div class="col-md-4" data-ng-repeat="inmueble in inmuebles | filter :{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, no_plantas: noPlantas, estado: Estado, ciudad: Ciudad, zona: Zona, precio:Precio, no_plantas: noPlantas} | orderBy:['-tipoDestacado', '-user.tipo']">
+        <div class="col-md-4" data-ng-repeat="inmueble in inmuebles | filter :{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, no_plantas: noPlantas, estado: estado.valor, ciudad: ciudad.nombre, zona: Zona, precio:Precio, no_plantas: noPlantas} | orderBy:['-tipoDestacado', '-user.tipo']">
 
         <table data-ng-show="inmueble.user.estatus==='activo'">
             <tr>        <!-- Sección ícono destacado-->
-                         <div class="col-md-12  text-center capa2" data-ng-hide="inmueble.tipoDestacado==0">
-                            <img src="modules/core/img/IconoD.png" width="80%" height="60px">
+                         <div class="col-md-12  text-lefth capa2" data-ng-hide="inmueble.tipoDestacado==0">
+                            <img src="modules/core/img/ListonD.png" width="80%" height="60px">
                           </div><br>          
                 <td>
                 <br>    
