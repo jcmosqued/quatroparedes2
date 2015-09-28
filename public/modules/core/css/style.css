@@ -1,9 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
-
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);*/
 
 body {
-    /*background: url(../img/Fondo4.jpg) no-repeat;*/
+
     background-attachment: fixed;
     background-size: cover;
     background-position: 50% 50%;
@@ -27,10 +26,6 @@ li {
     list-style: none;
 }
 
-/*a {
-    color: #e58d02;
-    text-decoration: none;
-}*/
 
 a:hover {
     color: #DBDBDB;
@@ -174,7 +169,6 @@ p {
 
 .menu-item:hover a {
     text-decoration: none;
-    //color: #333;
     animation: wobble;
     -webkit-animation: wobble;
     animation-duration: 1000ms;
