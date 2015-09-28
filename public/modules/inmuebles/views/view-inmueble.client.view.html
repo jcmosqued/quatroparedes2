@@ -1,9 +1,9 @@
 
 <section data-ng-controller="InmueblesController">
 <!--carrusel-->
+
 	<div class="VentanaModal">
-<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="false">&times;</span></button> -->
+
 		<div class="text-center">
 			<h3 data-ng-bind="item.titulo"></h3> 
 			<small>
@@ -18,7 +18,7 @@
 	   <!-- Sección de carrusel gratuito-->  
 
 			<div class="col-lg-12 container linea-separacion" data-ng-if="item.user.tipo==='gratuito'">
-			  <div id="carousel-ejemplo" class="carousel slide" data-ride="carousel">
+			  <div id="carousel-ejemplo" class="carousel slide" data-ride="carousel" data-interval="500">
 			    <!-- Indicadores del carrusel -->
 			    <ol class="carousel-indicators">
 			      <li data-target="#carousel-ejemplo" data-slide-to="0" class="active"></li>
@@ -29,7 +29,7 @@
 			    </ol>
 			    <!-- Wrapper for slides -->
 	 
-			    <div class="carousel-inner" role="listbox"   width: "100%" height:"350px">
+			    <div class="carousel-inner" role="listbox"   width: "60%" height:"350px">
 				   	<div class="item active">
 		            	<img ng-src="data:image/jepg;base64,{{item.image.base64}}" width="200" height="200" class="img-modal">
 		            </div>
@@ -115,16 +115,7 @@
 			    </div>
 
 			    <!--fin wrapper-->
-			    <!-- Botones de navegación-->
-			    <a class="left carousel-control" href="#carousel-ejemplo" role="button" data-slide="prev">
-			      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			      <span class="sr-only">Previo</span>
-			    </a>
 
-			    <a class="right carousel-control" href="#carousel-ejemplo" role="button" data-slide="next">
-			      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			      <span class="sr-only">Siguiente</span>
-			    </a>
 			  </div>
 			</div> <!--fin Carusel-->
 
@@ -170,8 +161,5 @@
 			</div>
 		</div>
 	</div>
-
-
-
 
 </section>

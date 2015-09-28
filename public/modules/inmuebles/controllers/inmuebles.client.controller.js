@@ -340,7 +340,7 @@ para poder acceder a sus datos*/
 
 
             $scope.load = function(lugar) {
-                        console.log(lugar);
+                        
 
             if (GBrowserIsCompatible()) {
                   var map = new GMap2(document.getElementById("map"));
