@@ -34,9 +34,14 @@
 	<!-- Fav Icon -->
 	<link href="/modules/core/img/brand/favicon.png" rel="icon" type="image/png">
 
-	<!--Application CSS Files-->
-	{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+	<!--Application CSS Files
+	{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}-->
 
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="modules/core/css/animate.css">
+	<link rel="stylesheet" href="modules/core/css/style.css">
+	<link rel="stylesheet" href="modules/users/css/users.css">
 	<!-- HTML5 Shim -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,8 +68,50 @@
 		var user = {{ user | json | safe }};
 	</script>
 
-	<!--Application JavaScript Files-->
-	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} 
+	<!--Application JavaScript Files
+	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} -->
+
+	<script defer type="text/javascript" src="lib/angular/angular.min.js"></script>
+	<script defer type="text/javascript" src="lib/angular-resource/angular-resource.min.js"></script>
+	<script defer type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script defer type="text/javascript" src="lib/angular-ui-utils/ui-utils.min.js"></script>
+	<script defer type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script defer type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+	<script defer type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script defer type="text/javascript" src="lib/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+	<script defer type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAg_2UIEV5rd9OVgNSGNfsyxTaN__vuAQAUAfJwnfsk7h_mauWkxSYbIJkdkwH1e7uYk7faoLIELG-Tw"></script>
+	<script defer type="text/javascript" src="config.js"></script>
+	<script defer type="text/javascript" src="application.js"></script>
+	<script defer type="text/javascript" src="modules/core/core.client.module.js"></script>
+	<script defer type="text/javascript" src="modules/inmuebles/inmuebles.client.module.js"></script>
+	<script defer type="text/javascript" src="modules/users/users.client.module.js"></script>
+	<script defer type="text/javascript" src="modules/usuarios/usuarios.client.module.js"></script>
+	<script defer type="text/javascript" src="modules/core/config/core.client.routes.js"></script>
+	<script defer type="text/javascript" src="modules/core/controllers/header.client.controller.js"></script>
+	<script defer type="text/javascript" src="modules/core/controllers/home.client.controller.js"></script>
+	<script defer type="text/javascript" src="modules/core/js/jquery-1.9.1.min.js"></script>
+	<script defer type="text/javascript" src="modules/core/js/jssor.js"></script>
+	<script defer type="text/javascript" src="modules/core/js/jssor.player.ytiframe.js"></script>
+	<script defer type="text/javascript" src="modules/core/js/jssor.player.ytiframe.min.js"></script>
+	<script defer type="text/javascript" src="modules/core/js/jssor.slider.js"></script>
+	<script defer type="text/javascript" src="modules/core/js/jssor.slider.min.js"></script>
+	<script defer type="text/javascript" src="modules/core/js/jssor.slider.mini.js"></script>
+	<script defer type="text/javascript" src="modules/core/services/menus.client.service.js"></script>
+	<script defer type="text/javascript" src="modules/inmuebles/config/inmuebles.client.config.js"></script>
+	<script defer type="text/javascript" src="modules/inmuebles/config/inmuebles.client.routes.js"></script>
+	<script defer type="text/javascript" src="modules/inmuebles/controllers/inmuebles.client.controller.js"></script>
+	<script defer type="text/javascript" src="modules/inmuebles/services/inmuebles.client.service.js"></script>
+	<script defer type="text/javascript" src="modules/users/config/users.client.config.js"></script>
+	<script defer type="text/javascript" src="modules/users/config/users.client.routes.js"></script>
+	<script defer type="text/javascript" src="modules/users/controllers/authentication.client.controller.js"></script>
+	<script defer type="text/javascript" src="modules/users/controllers/password.client.controller.js"></script>
+	<script defer type="text/javascript" src="modules/users/controllers/settings.client.controller.js"></script>
+	<script defer type="text/javascript" src="modules/users/services/authentication.client.service.js"></script>
+	<script defer type="text/javascript" src="modules/users/services/users.client.service.js"></script>
+	<script defer type="text/javascript" src="modules/usuarios/config/usuarios.client.config.js"></script>
+	<script defer type="text/javascript" src="modules/usuarios/config/usuarios.client.routes.js"></script>
+	<script defer type="text/javascript" src="modules/usuarios/controllers/usuarios.client.controller.js"></script>
+	<script defer type="text/javascript" src="modules/usuarios/services/usuarios.client.service.js"></script>
 
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->
