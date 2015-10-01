@@ -142,15 +142,15 @@
     <div class="col-md-9">
         <div class="col-md-4" data-ng-repeat="inmueble in inmuebles | filter :{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, no_plantas: noPlantas, estado: estado.valor, ciudad: ciudad.nombre, zona: Zona, precio:Precio, no_plantas: noPlantas} | orderBy:['-tipoDestacado', '-user.tipo']">
 
-        <table data-ng-show="inmueble.user.estatus==='activo'">
-            <tr>        <!-- Sección ícono destacado-->
-                         <div class="col-md-12  text-lefth capa2" data-ng-hide="inmueble.tipoDestacado==0">
-                            <img src="modules/core/img/ListonD.png" width="80%" height="60px">
-                          </div><br>          
-                <td>
+        <table data-ng-show="inmueble.user.estatus==='activo'"><br>
+            <tr class="img-thumbnail">        <!-- Sección ícono destacado-->
+                 <div class="col-md-12  text-lefth capa2" data-ng-hide="inmueble.tipoDestacado==0">
+                    <img src="modules/core/img/ListonD.png" width="80%" height="60px">
+                  </div><br>          
+                <td style="width: 240px; height:425px;">
                 <br>    
 
-                    <div class="img-thumbnail text-center" >  
+                    <div class="text-center" >  
                      
 
                         <FONT FACE="arial" SIZE=2 COLOR="gray">
@@ -210,6 +210,7 @@
         </div>
     </div>
 
+    
 <!--mensaje que se envía cuando no existen registros-->
 <div class="alert alert-warning text-center" data-ng-hide="!inmuebles.$resolved || inmuebles.length">
    No Inmuebles yet, why don't you <a href="/#!/inmuebles/create">create one</a>?
