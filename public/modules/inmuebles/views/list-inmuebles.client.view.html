@@ -29,16 +29,15 @@
 
   </div><br> <br>
 <div class="row">
-    <div class="col-md-4"><br>
+    <div class="col-md-6"><br>
       <img src="modules/core/img/Logo1.png" width="300px" height="150px">
     </div>
 
      <div class="col-md-4 sombra2 text-center"><br>
-      <h1></h1>
      </div><br>
      <!--fin Carusel-->
 
-    <div class="col-md-1 texttrans" ><br>
+    <div class="col-md-2 texttrans" ><br>
     
       <a href="/#!/inmuebles" ng-click="setTransaccion('Venta')">   
       Venta</font>
@@ -46,13 +45,13 @@
       </a>
      </div>
     
-    <div class="col-md-1 texttrans"><br>
+    <div class="col-md-2 texttrans"><br>
       <a href="/#!/inmuebles" ng-click="setTransaccion('Renta')">   
       Renta
       </a>
      </div>
           
-      <div class="col-md-1 texttrans"><br>
+      <div class="col-md-2 texttrans"><br>
       <a href="/#!/inmuebles" ng-click="setTransaccion('Traspaso')">   
       Traspaso
       </a>
@@ -143,8 +142,9 @@
         <div class="col-md-4" data-ng-repeat="inmueble in inmuebles | filter :{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, no_plantas: noPlantas, estado: estado.valor, ciudad: ciudad.nombre, zona: Zona, precio:Precio, no_plantas: noPlantas} | orderBy:['-tipoDestacado', '-user.tipo']">
 
         <table data-ng-show="inmueble.user.estatus==='activo'"><br>
-            <tr class="img-thumbnail">        <!-- Sección ícono destacado-->
-                 <div class="col-md-12  text-lefth capa2" data-ng-hide="inmueble.tipoDestacado==0">
+            <tr class="img-thumbnail">        
+            <!-- Sección ícono destacado-->
+                 <div class="col-md-10  text-lefth capa2" data-ng-hide="inmueble.tipoDestacado==0">
                     <img src="modules/core/img/ListonD.png" width="80%" height="60px">
                   </div><br>          
                 <td style="width: 240px; height:425px;">
