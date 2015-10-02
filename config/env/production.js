@@ -5,8 +5,8 @@ module.exports = {
 	assets: {
 		lib: {
 			css: [
-				'public/lib/bootstrap/dist/css/bootstrap.min.css',
-				'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
+				//'public/lib/bootstrap/dist/css/bootstrap.min.css',
+				//'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
 			],
 			js: [
 				'public/lib/angular/angular.min.js',
@@ -26,8 +26,8 @@ module.exports = {
 			]
 		},
 		css: 'public/dist/application.min.css',
-		js:  'public/dist/application.min.js',
-			 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAg_2UIEV5rd9OVgNSGNfsyxTaN__vuAQAUAfJwnfsk7h_mauWkxSYbIJkdkwH1e7uYk7faoLIELG-Tw'
+		js:  ['public/dist/application.min.js',
+			 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAg_2UIEV5rd9OVgNSGNfsyxTaN__vuAQAUAfJwnfsk7h_mauWkxSYbIJkdkwH1e7uYk7faoLIELG-Tw']
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || '144182149247756',
