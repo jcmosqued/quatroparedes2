@@ -18,6 +18,7 @@
         <tr>
             <th>Nombre</th>
             <th>Usuario</th>
+            <th>Estado</th>
             <th>Correo</th>
             <th>Teléfono</th>
             <th>Rol</th>
@@ -28,6 +29,7 @@
         <tr data-ng-repeat="usuario in usuarios | filter: Buscar | orderBy: 'displayName' " >
         <td>{{usuario.displayName}}</td>
         <td>{{usuario.username}}</td>
+        <td>{{usuario.estado}}</td>
         <td>{{usuario.email}}</td>
         <td>{{usuario.telefono}}</td>
         <td>{{usuario.roles[0]}}</td>

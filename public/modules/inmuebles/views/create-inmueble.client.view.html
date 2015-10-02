@@ -85,12 +85,14 @@
                 <label class="control-label" for="m3construccion">m2 Construcción:</label>
                 <input type="text" data-ng-model="m3construccion" id="m3construccion" class="form-control" placeholder="m2 de construcción">
 
-                <label class="control-label" for="image">Imagen principal</label>
+                <label class="control-label" for="image">Imagen principal</label><br>
+                 * Verificar que la imagen no sea mayor a 2 MB
                 <div class="controls">
                     <input id="image" type="file" data-ng-model="image" name="image" base-sixty-four-input accept="image/*">
                 </div>
 
-                <label class="control-label" for="image">Imagenes adicionales</label>
+                <label class="control-label" for="image">Imagenes adicionales</label><br>
+                 * Verificar que las imagenes no sean mayor a 2 MB
                 <div class="controls">
                      <input id="imagenes" type="file" data-ng-model="imagenes" name="imagenes" base-sixty-four-input accept="image/*" multiple>
                 </div>

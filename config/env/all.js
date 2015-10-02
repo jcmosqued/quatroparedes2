@@ -28,8 +28,8 @@ module.exports = {
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
 				'public/lib/jquery/dist/jquery.min.js',
 				'public/lib/bootstrap/dist/js/bootstrap.min.js',
-	            'public/lib/angular-base64-upload/dist/angular-base64-upload.min.js',
-	            'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAg_2UIEV5rd9OVgNSGNfsyxTaN__vuAQAUAfJwnfsk7h_mauWkxSYbIJkdkwH1e7uYk7faoLIELG-Tw'
+	            'public/lib/angular-base64-upload/dist/angular-base64-upload.min.js'
+	            
 			]
 		},
 		css: [
@@ -39,6 +39,7 @@ module.exports = {
 			'public/config.js',
 			'public/application.js',
 			'public/modules/*/*.js',
+			'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAg_2UIEV5rd9OVgNSGNfsyxTaN__vuAQAUAfJwnfsk7h_mauWkxSYbIJkdkwH1e7uYk7faoLIELG-Tw',
 			'public/modules/*/*[!tests]*/*.js'
 		],
 		tests: [

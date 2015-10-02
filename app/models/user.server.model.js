@@ -29,6 +29,7 @@ var UserSchema = new Schema({
 	lastName: {type: String,trim: true,default: '',validate: [validateLocalStrategyProperty, 'Ingresa tu apellido']},
 	displayName: {type: String,trim: true},
 	email: {type: String,trim: true,default: '',validate: [validateLocalStrategyProperty, 'Please fill in your email'],match: [/.+\@.+\..+/, 'Ingresa una dirección de correo válida']},
+	estado:{type: String},
 	username: {type: String,unique: 'testing error message',required: 'Ingresa un nombre de usuario',trim: true},
 	password: {type: String,default: '',validate: [validateLocalStrategyPassword, 'El password debe ser mas largo']},
 	salt: {type: String},

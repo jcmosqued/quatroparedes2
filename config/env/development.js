@@ -13,12 +13,12 @@ module.exports = {
 	twitter: {
 		clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
 		clientSecret: process.env.TWITTER_SECRET || 'CONSUMER_SECRET',
-		callbackURL: 'https://localhost:3000/oauth2callback'
+		callbackURL: '/oauth2callback'
 	},
 	google: {
 		clientID: process.env.GOOGLE_ID || '50521223582-6bbrjlnjmdc4kdpglqhl6b94acqtcgvd.apps.googleusercontent.com',
 		clientSecret: process.env.GOOGLE_SECRET || 'x95YMBQfai0EuE9hEZC2WJuu',
-		callbackURL: 'http://localhost:3000/auth/google/callback'
+		callbackURL: '/auth/google/callback'
 	},
 	linkedin: {
 		clientID: process.env.LINKEDIN_ID || 'APP_ID',
