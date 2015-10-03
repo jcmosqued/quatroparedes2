@@ -118,7 +118,7 @@
         </label> <br>
         <br>
 
-        <!--sección publicidad-->
+        <!--sección publicidad
           <div class="col-md-2"><br>
             <iframe src="modules/inmuebles/publicidad1.html" 
              width="250px" height="300px" marginwidth="0" scrolling="yes" frameborder="0" >
@@ -128,13 +128,18 @@
            width="250px" height="300px" marginwidth="0" scrolling="yes" frameborder="0"></iframe>
 
            <iframe src="modules/inmuebles/publicidad3.html" 
-           width="250px" height="300px" marginwidth="0" scrolling="yes" frameborder="0"></iframe>
+           width="250px" height="300px" marginwidth="0" scrolling="yes" frameborder="0"></iframe>-->
+           <div class="col-md-2"><br>
+           <img src="modules/inmuebles/imagenes/Patrocinadores/GIF_1.gif" width="250px" height="250px" marginwidth="0" scrolling="yes" frameborder="0"><br><br><br>
+           <img src="modules/inmuebles/imagenes/Patrocinadores/GIF_2.gif" width="250px" height="250px" marginwidth="0" scrolling="yes" frameborder="0"><br><br><br>
+           <img src="modules/inmuebles/imagenes/Patrocinadores/GIF_3.gif" width="250px" height="250px" marginwidth="0" scrolling="yes" frameborder="0"><br><br>
+
 
 
           </div><br>
         <!-- fin de seccion de publicidad -->
 
-    </div>
+           </div>
 
     <!-- Inmuebles -->
     <h4>Mostrando {{(inmuebles | filter:{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, precio:Precio, estado: estado.valor, ciudad: ciudad.nombre, zona: Zona, no_plantas: noPlantas}).length}} de {{inmuebles.length}} registros con tus criterios de búsqueda</h4>
