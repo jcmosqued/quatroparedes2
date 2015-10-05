@@ -6,8 +6,8 @@ module.exports = {
 		title: 'Quatroparedes'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || '144182149247756',
-		clientSecret: process.env.FACEBOOK_SECRET || 'f7c2b62ee53e2b5d7b25820a6cdb65d0',
+		clientID: process.env.FACEBOOK_ID || '144177522581552',
+		clientSecret: process.env.FACEBOOK_SECRET || '96d44b67c0fdd8d2953166b9756b94a9',
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {

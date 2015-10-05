@@ -10,7 +10,7 @@ module.exports = {
 			],
 			js: [
 				'public/lib/angular/angular.min.js',
-				'public/lib/angular-resource/angular-resource.js', 
+				'public/lib/angular-resource/angular-resource.min.js', 
 				//'public/lib/angular-cookies/angular-cookies.js', 
 				//'public/lib/angular-animate/angular-animate.js', 
 				//'public/lib/angular-touch/angular-touch.js', 
@@ -30,8 +30,8 @@ module.exports = {
 			 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAg_2UIEV5rd9OVgNSGNfsyxTaN__vuAQAUAfJwnfsk7h_mauWkxSYbIJkdkwH1e7uYk7faoLIELG-Tw']
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || '144182149247756',
-		clientSecret: process.env.FACEBOOK_SECRET || 'f7c2b62ee53e2b5d7b25820a6cdb65d0',
+		clientID: process.env.FACEBOOK_ID || '144177522581552',
+		clientSecret: process.env.FACEBOOK_SECRET || '96d44b67c0fdd8d2953166b9756b94a9',
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {
