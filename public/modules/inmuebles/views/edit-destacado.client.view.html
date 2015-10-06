@@ -14,17 +14,10 @@
         <form class="form-horizontal" data-ng-submit="updateDestacado()">
             <fieldset>
 
- 
                     <label class="control-label" for="titulo">Título</label>
                     <div class="controls">
                         <input type="text" data-ng-model="inmueble.titulo" id="titulo" class="form-control" placeholder="Agrega un título de máximo 30 caracteres" maxlength="30" disabled required>
                     </div>
-
-<!--                     <label class="control-label" for="tipoDestacado">Tipo destacado</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="inmueble.tipoDestacado" id="tipoDestacado" class="form-control" required>
-                    </div> -->
-
 
                      <label class="control-label" for="tipoDestacado">Tipo Destacado: <br>
                         <select ng-model="inmueble.tipoDestacado" id="tipoDestacado" class="form-control" required>

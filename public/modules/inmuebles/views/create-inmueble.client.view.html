@@ -15,8 +15,11 @@
         <form id="create" name ="inmuebleForm" class="form-horizontal" enctype="multipart/form-data">
             <fieldset>
             Los campos con asterico (*) son obligatorios <br>
-                <label class="control-label" for="titulo">* Título: </label>
-                <input type="text" data-ng-model="titulo" id="titulo" class="form-control" placeholder="Agrega un título de máximo 25 caracteres" maxlength="25" required>
+
+                
+                    <label class="control-label" for="titulo">* Título: </label>
+                    <input type="text" data-ng-model="titulo" id="titulo" class="form-control" placeholder="Agrega un título de máximo 25 caracteres" maxlength="25" required>
+               
                 
                 <label class="control-label" for="tipo_trans">* Tipo de inmueble:</label>
                 <select ng-model="tipo_inmueble" id="tipo_inmueble" class="form-control" placeholder="Tipo de inmueble" required>
@@ -66,6 +69,13 @@
 
                 <label class="control-label" for="precio">Precio:</label>
                 <input type="text" data-ng-model="precio" id="precio" class="form-control" placeholder="Precio">
+
+                <label class="control-label" for="moneda">Moneda:</label>
+                <select ng-model="moneda" id="moneda" class="form-control" required>
+                    <option value="MNX">Pesos</option>
+                    <option value="USD">Dólares</option>
+                    <option value="EUR">Euros</option>
+                </select>
 
                 <label class="control-label" for="no_plantas">Número de plantas:</label>
                 <input type="number" data-ng-model="no_plantas" id="no_plantas" class="form-control" min ="1" max ="5">

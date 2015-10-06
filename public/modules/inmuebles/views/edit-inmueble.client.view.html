@@ -76,6 +76,13 @@
                         <input type="text" data-ng-model="inmueble.precio" id="precio" class="form-control" placeholder="Precio">
                     </div>
 
+                    <label class="control-label" for="moneda">Moneda:</label>
+                    <select ng-model="moneda" id="moneda" class="form-control" required>
+                        <option value="MNX">Pesos</option>
+                        <option value="USD">Dólares</option>
+                        <option value="EUR">Euros</option>
+                    </select>
+
                     <label class="control-label" for="m2terreno">m2 Terreno:</label>
                     <div class="controls">
                         <input type="text" data-ng-model="inmueble.m2terreno" id="m2terreno" class="form-control" placeholder="m2 de terreno">

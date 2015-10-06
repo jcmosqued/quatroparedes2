@@ -19,6 +19,7 @@ var InmuebleSchema = new Schema({
 	colonia: { type: String, default: '', trim: true },
 	direccion: { type: String, default: '', required: 'Ingresa la calle y numero del inmueble', trim: true },
 	precio: { type: Number, default: 0 },
+	moneda: {type: String, default: 'MNX'},
 	no_plantas: { type: Number, default: 1 },
 	no_habitaciones: { type: Number, default: 1 },
 	no_banos: { type: Number, default: 1 },

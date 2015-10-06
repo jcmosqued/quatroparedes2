@@ -38,7 +38,7 @@
                 Zona: {{inmueble.zona}} <br/>
                 Colonia: {{inmueble.colonia}} 
                 Dirección: {{inmueble.direccion}} <br/>
-                Precio: {{inmueble.precio | currency}} <br/>
+                Precio: {{inmueble.precio | currency}} {{inmueble.moneda}} <br/>
                 M2 de terreno: {{inmueble.m2terreno}} <br/>
                 M2 de construcción: {{inmueble.m2construccion}} <br/>
                 No. Plantas: {{inmueble.no_plantas}} <br/>e
@@ -101,7 +101,7 @@
                         <h4 data-ng-bind="inmueble.titulo"> 
                         </h4>
                             <b>Tipo de inmueble:</b> {{inmueble.tipo_inmueble}},  
-                            <b>Precio:</b> {{inmueble.precio | currency}}, 
+                            <b>Precio:</b> {{inmueble.precio | currency}} {{inmueble.moneda}}, 
                             <b>Tipo de transacción:</b> {{inmueble.tipo_trans}}, 
                             <b>Estado:</b> {{inmueble.estado}}, 
                             <b>Ciudad:</b> {{inmueble.ciudad}},
