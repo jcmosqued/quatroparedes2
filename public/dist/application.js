@@ -310,7 +310,7 @@ angular.module('inmuebles').config(['$stateProvider',
 		}).
 		state('listDestacados', {
 			url: '/inmueblesDestacados',
-			templateUrl: 'modules/inmuebles/views/list-Destacados.client.view.html'
+			templateUrl: 'modules/inmuebles/views/list-destacados.client.view.html'
 		}).
 		state('createInmueble', {
 			url: '/inmuebles/create',
