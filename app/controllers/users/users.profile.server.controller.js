@@ -52,7 +52,7 @@ exports.update = function(req, res) {
  * List of Usuarios
  */
 exports.list = function(req, res) { 
-	User.find().sort('-created').exec(function(err, users) {
+	User.find().exec(function(err, users) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

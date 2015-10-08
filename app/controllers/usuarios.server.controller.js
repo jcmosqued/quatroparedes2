@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
  * List of Usuarios
  */
 exports.list = function(req, res) { 
-	Usuario.find().sort('-created').select('displayName username email estado roles tipo logo telefono paginaweb facebook twitter letraFondo colorFondo letraContacto colorContacto letraMarco colorMarco imgPortada imgLogo estatus').exec(function(err, usuarios) {
+	Usuario.find().select('displayName username email estado roles tipo logo telefono paginaweb facebook twitter letraFondo colorFondo letraContacto colorContacto letraMarco colorMarco imgPortada imgLogo estatus').exec(function(err, usuarios) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

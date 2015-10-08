@@ -22,15 +22,21 @@
             <th>Título</th>
             <th>Dirección</th>
             <th>Nivel destacado</th>
+            <th>tipo usuario</th>
+            <th>creado</th>
+            <th>precio</th>
             <th>Modificar/Eliminar</th>
         </tr>
-        <tr data-ng-repeat="inmueble in inmuebles | filter: Buscar | orderBy: 'user.displayName'" >
+        <tr data-ng-repeat="inmueble in inmuebles | filter: Buscar " >
         <td>{{inmueble.user.displayName}}</td>
         <td>{{inmueble.user.username}}</td>
         <td>{{inmueble.user.email}}</td>
         <td>{{inmueble.titulo}}</td>
         <td>{{inmueble.direccion}}</td>
         <td>{{inmueble.tipoDestacado}}</td>
+        <td>{{inmueble.user.tipo}}</td>
+        <td>{{inmueble.user.created}}</td>
+        <td>{{inmueble.precio}}</td>
         <td>
         <div class="pull-right" >
             <a class="btn btn-primary" href="/#!/inmuebles/{{inmueble._id}}/editDestacado">

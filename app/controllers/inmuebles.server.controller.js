@@ -77,7 +77,7 @@ exports.delete = function(req, res) {
  * List of Inmuebles
  */
 exports.list = function(req, res) { 
-	Inmueble.find().sort('-created').populate('user').exec(function(err, inmuebles) {
+	Inmueble.find().sort('-tipoDestacado').populate('user').exec(function(err, inmuebles) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
