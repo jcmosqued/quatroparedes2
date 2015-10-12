@@ -11,7 +11,7 @@ angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootS
                   page: 1,
                   count: 9,
                   sorting: {
-                        _id: 'desc'
+                        tipoDestacado: 'desc'
                   }
             };
 
