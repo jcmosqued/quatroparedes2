@@ -76,7 +76,7 @@ exports.delete = function(req, res) {
 /**
  * List of Inmuebles
  */
-exports.list = function(req, res) { 
+/*exports.list = function(req, res) { 
 	Inmueble.find().sort('-tipoDestacado').populate('user').exec(function(err, inmuebles) {
 		if (err) {
 			return res.status(400).send({
@@ -86,7 +86,47 @@ exports.list = function(req, res) {
 			res.jsonp(inmuebles);
 		}
 	});
+};*/
+
+exports.list = function(req, res){
+	var count = req.query.count || 5;
+	var page = req.query.page || 1;
+
+	var filter ={
+		filters:{
+			mandatory:{
+				contains: req.query.filter
+			}
+		}
+	};
+
+	var pagination = {
+		start: (page - 1) * count,
+		count: count
+	};
+
+	var sort = {
+		sort: {
+			desc: 'tipoDestacado'
+		}
+	};
+
+	Inmueble
+		.find()
+		.populate('user')
+		.filter(filter)
+		.order(sort)
+		.page(pagination, function(err, inmuebles){
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(inmuebles);
+		}
+		});
 };
+
 
 /**
  * Inmueble middleware

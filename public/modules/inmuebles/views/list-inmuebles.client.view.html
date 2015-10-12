@@ -1,4 +1,4 @@
-<section data-ng-controller="InmueblesController" data-ng-init="find()">
+<section data-ng-controller="InmueblesController">
 <div class="col-md-12 background-image page-header"><br>
   <!--Sección de botones-->
   <div class="col-lg-12 col-md-12 col-sm-12 btn-group btn-group-justified" role="group" aria-label="...">
@@ -58,6 +58,7 @@
      </div>
    </div>
   </div>
+
 
 
     <!-- Filtros personalizados -->
@@ -141,79 +142,60 @@
 
            </div>
 
+
+      
+
     <!-- Inmuebles  | orderBy:['-tipoDestacado', '-user.tipo']-->
-    <h4>Mostrando {{(inmuebles | filter:{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, precio:Precio, estado: estado.valor, ciudad: ciudad.nombre, zona: Zona, no_plantas: noPlantas}).length}} de {{inmuebles.length}} registros con tus criterios de búsqueda</h4>
+    <h4>Mostrando {{inmuebles.results.length}} de {{inmuebles.total}} registros con tus criterios de búsqueda</h4>
     <div class="col-md-9">
-        <div class="col-md-4" data-ng-repeat="inmueble in inmuebles | filter :{tipo_inmueble: categoriaActual,  tipo_trans: transaccionActual, no_plantas: noPlantas, estado: estado.valor, ciudad: ciudad.nombre, zona: Zona, precio:Precio, no_plantas: noPlantas} ">
+      <div >
 
-        <table data-ng-show="inmueble.user.estatus==='activo'"><br>
-            <tr class="img-thumbnail">        
-            <!-- Sección ícono destacado-->
-                 <div class="col-md-10  text-lefth capa2" data-ng-hide="inmueble.tipoDestacado==0">
-                    <img src="modules/core/img/ListonD.png" width="80%" height="60px">
-                  </div><br>          
-                <td style="width: 240px; height:425px;">
-                <br>    
+      <table ng-table="tableParams">
+        <tr ng-repeat = "inmueble in $data" class="col-md-4 img-thumbnail">
+          <div class="col-md-10  text-lefth capa2" data-ng-hide="inmueble.tipoDestacado==0">
+            <img src="modules/core/img/ListonD.png" width="80%" height="60px">
+          </div><br>
+          <td style="width: 240px; height:425px;">
+            <div class="text-center" >
+              <FONT FACE="arial" SIZE=2 COLOR="gray">
+                Publicado por:<br>
+                <span data-ng-bind="inmueble.user.displayName"></span>
+              </FONT>
+              <img ng-src="data:image/jpg;base64,{{inmueble.image.base64}}" id="photo-id" width="100%" height="200"/>
+              <FONT FACE="arial" SIZE=2 COLOR="white" >
+              <h5 class="list-group-item" data-ng-bind="inmueble.titulo"> 
+              </h5>
+              </FONT>
+              <FONT FACE="arial" SIZE=2 COLOR="gray">
+              Tipo de inmueble: {{inmueble.tipo_inmueble}} <br> 
+              Precio: {{inmueble.precio | currency}} <br>
+              </FONT>
+              <div class="coll-sm-12">         
+                <div class="col-sm-6 botonNaranja botonNaranja-naranja" >
+                   <a ng-click="showModal(inmueble)"><font color="#000">Ver Más</font>
+                   </a>
+                </div>
+                <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="((authentication.user) && (authentication.user._id == inmueble.user._id))">
+                   <a data-ng-href="#!/inmuebles/{{inmueble._id}}/edit"><font color="#000">Editar</font>
+                   </a>
+                </div>
+              </div>
 
-                    <div class="text-center" >  
-                     
-
-                        <FONT FACE="arial" SIZE=2 COLOR="gray">
-                            Publicado por:<br>
-                            <span data-ng-bind="inmueble.user.displayName"></span>
-                        
-                        </FONT>
-                        <img ng-src="data:image/jpg;base64,{{inmueble.image.base64}}" id="photo-id" width="100%" height="200"/>
-
-
-                        <FONT FACE="arial" SIZE=2 COLOR="white" >
-                        <h5 class="list-group-item" data-ng-bind="inmueble.titulo"> 
-                        </h5>
-                        </FONT>
-
-                        <FONT FACE="arial" SIZE=2 COLOR="gray">
-                        Tipo de inmueble: {{inmueble.tipo_inmueble}} <br> 
-                        Precio: {{inmueble.precio | currency}} <br>
-                        </FONT>
-                
-                        <div class="coll-sm-12">
-                           
-                            <div class="col-sm-6 botonNaranja botonNaranja-naranja" >
-                               <a ng-click="showModal(inmueble)"><font color="#000">Ver Más</font>
-                               </a>
-                            </div>
-
-                            <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="((authentication.user) && (authentication.user._id == inmueble.user._id))">
-                               <a data-ng-href="#!/inmuebles/{{inmueble._id}}/edit"><font color="#000">Editar</font>
-                               </a>
-                            </div>
-                        </div>
-
-                        <div class="coll-sm-12">
-                            <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="inmueble.user.tipo==='pagosite'">
-
-                                <a data-ng-href="#!/inmuebles/{{inmueble._id}}"><font color="#000">Ver Sitio</font>
-                                </a>
-                            </div>
-
-                            <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="inmueble.user.tipo==='pagosite'">
-
-                                <a data-ng-href="#!/inmuebles/{{inmueble._id}}"><font color="#000">Compartir</font>
-                                </a>
-                            </div>
-                        </div>
-                        
-
-                      <div class="col-sm-12">
-                      
-                      </div> 
-
-                    </div> <!--  -->
-                </td>
-            </tr>
-        </table>
+              <div class="coll-sm-12">
+                <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="inmueble.user.tipo==='pagosite'">
+                    <a data-ng-href="#!/inmuebles/{{inmueble._id}}"><font color="#000">Ver Sitio</font>
+                    </a>
+                </div>
+                <div class="col-sm-6 botonNaranja botonNaranja-naranja" data-ng-show="inmueble.user.tipo==='pagosite'">
+                    <a data-ng-href="#!/inmuebles/{{inmueble._id}}"><font color="#000">Compartir</font>
+                    </a>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
         </div>
-    </div>
+    </div> 
 
     
 <!--mensaje que se envía cuando no existen registros-->
