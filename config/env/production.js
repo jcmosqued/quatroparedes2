@@ -20,8 +20,9 @@ module.exports = {
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
 				'public/lib/jquery/dist/jquery.min.js',
 				'public/lib/bootstrap/dist/js/bootstrap.min.js',
-	            'public/lib/angular-base64-upload/dist/angular-base64-upload.min.js',
-	            'public/lib/ng-table/dist/ng-table.min.js'
+	            'public/lib/angular-base64-upload/dist/angular-base64-upload.min.js'
+	            
+
 			]
 		},
 		css: 'public/dist/application.min.css',

@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function() {
 	// Init module configuration options
 	var applicationModuleName = 'Quatroparedes';
-	var applicationModuleVendorDependencies = ['ngResource', 'ui.router', 'ui.bootstrap', 'ui.utils','naif.base64', 'ngTable'];
+	var applicationModuleVendorDependencies = ['ngResource', 'ui.router', 'ui.bootstrap', 'ui.utils','naif.base64'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {
@@ -333,32 +333,11 @@ angular.module('inmuebles').config(['$stateProvider',
 'use strict';
 
 // Inmuebles controller
-angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootScope', '$modal', 'categorias', 'transacciones', 'item', '$timeout', '$stateParams', '$location', 'Authentication', 'Inmuebles', 'ngTableParams',
-	function($scope, $rootScope, $modal, categorias, transacciones, item, $timeout, $stateParams, $location, Authentication, Inmuebles, ngTableParams) {
+angular.module('inmuebles').controller('InmueblesController', ['$scope', '$rootScope', '$modal', 'categorias', 'transacciones', 'item', '$timeout', '$stateParams', '$location', 'Authentication', 'Inmuebles',
+	function($scope, $rootScope, $modal, categorias, transacciones, item, $timeout, $stateParams, $location, Authentication, Inmuebles) {
 		$scope.authentication = Authentication;
 		$scope.categoriaActual=categorias.categoriaActual;
 		$scope.transaccionActual=transacciones.transaccionActual;
-
-            var params ={
-                  page: 1,
-                  count: 9,
-                  sorting: {
-                        tipoDestacado: 'desc'
-                  }
-            };
-
-            var settings = {
-                  total: 0,
-                  counts:[],
-                  getData: function($defer, params){
-                        Inmuebles.get(params.url(), function(response){
-                              params.total(response.total);
-                              $defer.resolve(response.results);
-                        })
-                  }
-            };
-
-            $scope.tableParams= new ngTableParams(params, settings);
 
             $scope.setCategoria =function(categoria){
 			$scope.categoriaActual=categoria;
@@ -680,9 +659,7 @@ para poder acceder a sus datos*/
 
 		// Find a list of Inmuebles
 		$scope.find = function() {
-			$scope.inmuebles = Inmuebles.get(params, function(response){
-                  });
-                  console.log($scope.inmuebles);
+			$scope.inmuebles = Inmuebles.query();
 		};
 
 		// Find existing Inmueble
