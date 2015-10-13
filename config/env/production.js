@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/quatroparedes-dev?server:{poolSize:5}',
+	db: 'mongodb://localhost/quatroparedes-dev',
 	assets: {
 		lib: {
 			css: [

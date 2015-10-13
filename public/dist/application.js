@@ -579,6 +579,7 @@ para poder acceder a sus datos*/
 				colonia: this.colonia,
 				direccion: this.direccion,
 				precio: this.precio,
+                        moneda: moneda,
                         m2terreno: this.m2terreno,
                         m2construccion: this.m2construccion,
                         no_plantas: this.no_plantas,
