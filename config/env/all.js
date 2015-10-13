@@ -15,6 +15,7 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				'public/lib/ng-table/dist/ng-table.min.css'
 			],
 			js: [
 				'public/lib/angular/angular.min.js',
@@ -28,7 +29,8 @@ module.exports = {
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
 				'public/lib/jquery/dist/jquery.min.js',
 				'public/lib/bootstrap/dist/js/bootstrap.min.js',
-	            'public/lib/angular-base64-upload/dist/angular-base64-upload.min.js'
+	            'public/lib/angular-base64-upload/dist/angular-base64-upload.min.js',
+	            'public/lib/ng-table/dist/ng-table.min.js'
 	            
 			]
 		},
